@@ -32,7 +32,7 @@ const Navber = () => {
                               </ul>
                          </div>
                          <div className="navbar-end">
-                               <Link to={'/login'}> Login</Link>
+                               <Link to={'/ragister'}> Login</Link>
                          </div>
                     </div>
                </div>
