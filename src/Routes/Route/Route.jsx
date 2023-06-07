@@ -4,6 +4,7 @@ import Main from "../../Layout/Main/Main";
 import Ragister from "../../UserAccount/Ragister/Ragister";
 import Login from "../../UserAccount/Login/Login";
 import Instructors from "../../Pages/Instructors/Instructors/Instructors";
+import Classes from "../../Pages/Classes/Classes/Classes";
 
 
 const Route = createBrowserRouter([
@@ -26,6 +27,10 @@ const Route = createBrowserRouter([
                {
                      path:'/instructors',
                      element:<Instructors></Instructors>
+               },
+               {
+                     path:'/classes',
+                     element:<Classes></Classes>
                }
            ]
      }
