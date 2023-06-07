@@ -15,17 +15,17 @@ import { useQuery } from "@tanstack/react-query";
 
 const Popularclass = () => {
 
-     const {data}=useQuery({
-           queryKey: ["className"],
-           queryFn: async  ()=>{
-                const res= await fetch('Classes.json');
-                return res.json();
-           }
+     const { data } = useQuery({
+          queryKey: ["className"],
+          queryFn: async () => {
+               const res = await fetch('Classes.json');
+               return res.json();
+          }
      })
-console.log(data);
+     console.log(data);
 
-const popular=data?.filter(item=>  item.category =="popular");
-console.log(popular);
+     const popular = data?.filter(item => item.category == "popular");
+     console.log(popular);
 
      return (
           <div className="">
@@ -34,7 +34,7 @@ console.log(popular);
                <div>
 
                     <Swiper
-                         slidesPerView={3}
+                         slidesPerView={4}
                          spaceBetween={30}
                          pagination={{
                               clickable: true,
@@ -42,48 +42,17 @@ console.log(popular);
                          modules={[Pagination]}
                          className="mySwiper"
                     >
-                        {
-                         popular?.map((item,index)=>  <SwiperSlide key={index}>
-                              <div>
-                              <img src={item.image} alt="" />
-                              </div>
-                              
-                         </SwiperSlide> )
-                        }
-{/* 
-                        
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://images.pexels.com/photos/15922096/pexels-photo-15922096/free-photo-of-young-woman-in-a-summer-dress-playing-the-electric-guitar.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" />
-                              </div>
+                         {
+                              popular?.map((item, index) => <SwiperSlide key={index}>
+                                   <div className="  relative    ">
+                                        <img className="  relative  h-96 w-full" src={item.image} alt="" />
+                                         <h1 className="  absolute bottom-2  left-0  bg-[#d59578d3] px-2 py-1 text-white    text-2xl font-semibold"> {item?.name} </h1>
+                                   </div>
 
-                         </SwiperSlide>
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://img.freepik.com/free-vector/cultural-happy-vasant-panchami-indian-festival-background-design-vector_1055-12074.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais" alt="" />
-                              </div>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://img.freepik.com/free-photo/friends-sitting-near-bonfire-smiling-speaking-resting-playing-guitar_176420-4172.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais" alt="" />
-                              </div>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://img.freepik.com/premium-vector/happy-lohri-celebration-greeting-card-with-vector-illustration_30996-7640.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais" alt="" />
-                              </div>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://img.freepik.com/premium-photo/teacher-assisting-boyto-play-guitar-classroom_107420-45345.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais" alt="" />
-                              </div>
-                         </SwiperSlide>
-                         <SwiperSlide>
-                         <div>
-                              <img src="https://img.freepik.com/premium-photo/band-adult-guitarists-rehearsing-studio_201836-2701.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais" alt="" />
-                              </div>
-                         </SwiperSlide> */}
-                       
+                              </SwiperSlide>)
+                         }
+
+
                     </Swiper>
 
                </div>
