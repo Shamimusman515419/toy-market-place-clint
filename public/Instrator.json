@@ -1,10 +1,9 @@
 [
      {
-          "id": 15,
           "name": "John Smith",
-          "img":"https://img.freepik.com/free-photo/portrait-attractive-hispanic-brunette-teaching-music-group-preschool-pupils_662251-2635.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
+          "img": "https://img.freepik.com/free-photo/portrait-attractive-hispanic-brunette-teaching-music-group-preschool-pupils_662251-2635.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "john.smith@example.com",
-          "category":"popular",
+          "category": "popular",
           "numStudents": 100,
           "description": "John Smith is an experienced piano instructor with a focus on classical music.",
           "experience": [
@@ -19,11 +18,10 @@
           ]
      },
      {
-          "id": 14,
           "name": "Emily Johnson",
-          "img":"https://img.freepik.com/free-photo/kids-being-part-sunday-school_23-2149582908.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
+          "img": "https://img.freepik.com/free-photo/kids-being-part-sunday-school_23-2149582908.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "emily.johnson@example.com",
-          "category":"normal",
+          "category": "normal",
           "numStudents": 60,
           "description": "Emily Johnson is a vocal coach specializing in contemporary singing techniques.",
           "experience": [
@@ -38,12 +36,10 @@
           ]
      },
      {
-          "id": 13,
           "name": "David Lee",
-          "img":"https://img.freepik.com/free-photo/high-angle-kids-singing-sunday-school_23-2149613759.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/free-photo/high-angle-kids-singing-sunday-school_23-2149613759.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
           "email": "david.lee@example.com",
-          "category":"popular",
+          "category": "popular",
           "numStudents": 212,
           "description": "David Lee is a guitar instructor who loves teaching various genres, including rock and jazz.",
           "experience": [
@@ -57,14 +53,11 @@
                }
           ]
      },
-
      {
-          "id": 12,
           "name": "Sarah Johnson",
-          "img":"https://img.freepik.com/premium-photo/family-making-music-with-guitar_79405-4352.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/premium-photo/family-making-music-with-guitar_79405-4352.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
           "email": "sarah.johnson@example.com",
-          "category":"popular",
+          "category": "popular",
           "numStudents": 118,
           "description": "Sarah Johnson is a violin instructor known for her expertise in classical and contemporary violin techniques.",
           "experience": [
@@ -79,12 +72,10 @@
           ]
      },
      {
-          "id": 11,
           "name": "Michael Davis",
           "email": "michael.davis@example.com",
-          "img":"https://img.freepik.com/free-photo/close-up-musicians-making-music_23-2148845395.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
-          "category":"normal",
+          "img": "https://img.freepik.com/free-photo/close-up-musicians-making-music_23-2148845395.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
+          "category": "normal",
           "numStudents": 85,
           "description": "Michael Davis is a drum instructor specializing in various styles such as rock, jazz, and Latin percussion.",
           "experience": [
@@ -99,12 +90,10 @@
           ]
      },
      {
-          "id": 3,
           "name": "Rebecca Wilson",
-          "img":"https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "rebecca.wilson@example.com",
-          "category":"normal",
+          "category": "normal",
           "numStudents": 30,
           "description": "Rebecca Wilson is a vocal coach who focuses on classical vocal techniques and performance skills.",
           "experience": [
@@ -119,12 +108,10 @@
           ]
      },
      {
-          "id": 4,
           "name": "Daniel Thompson",
           "email": "daniel.thompson@example.com",
-          "category":"popular",
-          "img":"https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
-
+          "category": "popular",
+          "img": "https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "numStudents": 110,
           "description": "Daniel Thompson is a piano instructor specializing in jazz improvisation and composition.",
           "experience": [
@@ -139,12 +126,10 @@
           ]
      },
      {
-          "id": 5,
           "name": "Emily Adams",
-          "img":"https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/premium-photo/teacher-giving-music-lessons-school_392895-22526.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "emily.adams@example.com",
-          "category":"normal",
+          "category": "normal",
           "numStudents": 55,
           "description": "Emily Adams is a flute instructor with a passion for teaching classical repertoire and technique.",
           "experience": [
@@ -159,12 +144,10 @@
           ]
      },
      {
-          "id": 6,
           "name": "Alex Rodriguez",
-          "img":"https://img.freepik.com/premium-photo/nursery-children-playing-with-musical-instruments-classroom_53876-82782.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/premium-photo/nursery-children-playing-with-musical-instruments-classroom_53876-82782.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
           "email": "alex.rodriguez@example.com",
-          "category":"popular",
+          "category": "popular",
           "numStudents": 102,
           "description": "Alex Rodriguez is a guitar instructor specializing in acoustic and fingerstyle guitar techniques.",
           "experience": [
@@ -179,12 +162,10 @@
           ]
      },
      {
-          "id": 7,
           "name": "Jennifer Lee",
           "email": "jennifer.lee@example.com",
-          "img":"https://img.freepik.com/free-photo/side-view-people-making-music-home_52683-98053.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
-          "category":"popular",
+          "img": "https://img.freepik.com/free-photo/side-view-people-making-music-home_52683-98053.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
+          "category": "popular",
           "numStudents": 116,
           "description": "Jennifer Lee is a saxophone instructor known for her expertise in jazz improvisation and performance.",
           "experience": [
@@ -199,12 +180,10 @@
           ]
      },
      {
-          "id": 8,
           "name": "Mark Thompson",
-          "img":"https://img.freepik.com/free-photo/young-student-learning-how-play-musical-chords_23-2148511107.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/free-photo/young-student-learning-how-play-musical-chords_23-2148511107.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "mark.thompson@example.com",
-          "category":"normal",
+          "category": "normal",
           "numStudents": 60,
           "description": "Mark Thompson is a trumpet instructor who specializes in classical and jazz trumpet techniques.",
           "experience": [
@@ -219,12 +198,10 @@
           ]
      },
      {
-          "id": 9,
           "name": "Jessica Davis",
-          "img":"https://img.freepik.com/free-photo/two-sound-engineers-working-together_107420-96156.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
-
+          "img": "https://img.freepik.com/free-photo/two-sound-engineers-working-together_107420-96156.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
           "email": "jessica.davis@example.com",
-          "category":"normal",
+          "category": "normal",
           "numStudents": 74,
           "description": "Jessica Davis is a cello instructor with a focus on classical repertoire and advanced techniques.",
           "experience": [
@@ -239,12 +216,10 @@
           ]
      },
      {
-          "id": 10,
           "name": "Robert Wilson",
           "email": "robert.wilson@example.com",
-          "category":"normal",
-          "img":"https://img.freepik.com/premium-photo/cute-asian-schoolgirl-playing-acoustic-guitar-looking-notes-music-stand-while-sitting-agai_236854-44545.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
-
+          "category": "normal",
+          "img": "https://img.freepik.com/premium-photo/cute-asian-schoolgirl-playing-acoustic-guitar-looking-notes-music-stand-while-sitting-agai_236854-44545.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
           "numStudents": 20,
           "description": "Robert Wilson is a music theory instructor with a passion for teaching harmony and composition.",
           "experience": [

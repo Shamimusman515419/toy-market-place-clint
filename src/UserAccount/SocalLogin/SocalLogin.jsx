@@ -17,6 +17,7 @@ const SocalLogin = () => {
           <div>
                <div>
                     <div className=' my-3 px-2 flex gap-6  justify-center items-center'>
+
                          <FaGoogle install react-icons  onClick={handleGoogle} className='   cursor-pointer text-[#cf7d03] text-2xl'></FaGoogle>
                          <FaGithub className=' cursor-pointer text-2xl'></FaGithub>
                          <FaFacebook className=' cursor-pointer text-[#4450d5] text-2xl'></FaFacebook>

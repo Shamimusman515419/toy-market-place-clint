@@ -8,6 +8,7 @@ import Classes from "../../Pages/Classes/Classes/Classes";
 import AdminDashboard from "../../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import UserDashboard from "../../Pages/Dashboard/UserDashboard/UserDashboard";
 import Dashboard from "../../Layout/Dashboard/Dashboard";
+import PriveteRoute from "../PrivetRoute/PriveteRoute";
 
 
 const Route = createBrowserRouter([
@@ -41,12 +42,12 @@ const Route = createBrowserRouter([
       },
       {
             path: 'dashboard',
-            element: <Dashboard></Dashboard>,
+            element: <PriveteRoute> <Dashboard></Dashboard> </PriveteRoute>  ,
             children: [
 
                   {
                         path: 'userDashboard',
-                        element: <UserDashboard></UserDashboard>
+                        element:  <PriveteRoute> <UserDashboard></UserDashboard></PriveteRoute> 
                   },
                   {
                         path: 'adminDashboard',

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../FirebaseConfig/Firebase.config";
+import SocalLogin from "../SocalLogin/SocalLogin";
 
 
 const Ragister = () => {
@@ -110,6 +111,7 @@ const Ragister = () => {
                               </div>
 
                          </form>
+                         <SocalLogin></SocalLogin>
 
 
                     </div>

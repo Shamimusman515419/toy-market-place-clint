@@ -4,10 +4,16 @@ import ClassesCard from "../ClassesCard/ClassesCard";
 
 
 const Classes = () => {
+     const token=localStorage.getItem('access-token')
+   
      const { data } = useQuery({
-          queryKey: ["popularInstacort"],
+          queryKey: ["classes"],
           queryFn: async () => {
-               const res = await fetch('Classes.json');
+               const res = await fetch('http://localhost:5000/classes', {
+                    headers:{
+                         authorization: ` bearer ${token}`
+                     }
+               });
                return res.json();
           }
      })
