@@ -21,7 +21,7 @@ const Banner = () => {
                          </div>
                     </div>
                     <div id="slide2" className="carousel-item relative w-full">
-                         <img src="https://media.istockphoto.com/id/1342044945/photo/great-song-excited-woman-listening-to-music-in-earphones-on-smartphone-dancing-and-having-fun.jpg?s=1024x1024&w=is&k=20&c=IoLCcsiIuBjkZ2kZwXYfUp5Hkj6zAiS-p78w_MVoCbY=" className="w-full" />
+                         <img src="https://img.freepik.com/free-photo/friends-with-guitar-party_23-2148115746.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais" className="w-full" />
                          <div className=" absolute   flex  flex-col  w-full  h-full      items-center  justify-center  ">
                               <div className='text-center'>
                                    <h1 className=" md:text-7xl text-3xl  text-color  font-semibold  my-3  "> Rabindra Sangeet </h1>

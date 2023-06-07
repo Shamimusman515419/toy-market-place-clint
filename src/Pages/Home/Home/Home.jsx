@@ -1,3 +1,4 @@
+import Popularinstrctor from "../PopularInstractor/Popularinstrctor";
 import Banner from "./Banner";
 import Popularclass from "./Popularclass";
 
@@ -8,6 +9,7 @@ const Home = () => {
           <div>
              <Banner></Banner>
              <Popularclass></Popularclass>
+             <Popularinstrctor></Popularinstrctor>
           </div>
      );
 };

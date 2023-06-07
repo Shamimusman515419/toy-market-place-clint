@@ -22,10 +22,10 @@ const Popularclass = () => {
                return res.json();
           }
      })
-     console.log(data);
+  
 
      const popular = data?.filter(item => item.category == "popular");
-     console.log(popular);
+
 
      return (
           <div className="">
