@@ -1,19 +1,36 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Link } from "react-router-dom";
+import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../../FirebaseConfig/Firebase.config";
 
 
 const Ragister = () => {
-     const [machEorro,setMachError]=useState('')
+     const [machEorro, setMachError] = useState('')
+     const { CreateUser } = useContext(AuthContact);
      const { register, handleSubmit, reset, formState: { errors } } = useForm();
      const onSubmit = data => {
+          const auth = getAuth(app);
+          const name = data.fistName + " " + data.lastName;
+          if (data.password == data.ConfirmPassword) {
+               CreateUser(data.email, data.password).then(result => {
+                    console.log(result.user);
+                    updateProfile(auth.currentUser, {
+                         displayName: name, photoURL: data.photo
+                    }).then((result) => {
+                         reset()
+                       console.log( "shamim", result);
+                    }).catch((error) => {
+                         console.log(error.message);
+                    });
+               }).catch(error => {
+                    console.log(error.message);
+               })
 
-          
-          if(data.password == data.ConfirmPassword){
-               console.log(data);
-          }else{
-               return  setMachError(" password not mach")
+          } else {
+               return setMachError(" password not mach")
           }
      }
 
@@ -27,18 +44,18 @@ const Ragister = () => {
                     <div className='rounded-md   my-9 p-3 '>
                          <h1 className='  text-center text-2xl font-bold   uppercase   u underline  text-color '> Ragistion</h1>
                          <form onSubmit={handleSubmit(onSubmit)}>
-                               <div className=" md:flex gap-2 justify-start">
-                               <div className=' w-full'>
-                                   <label className=' text-xl font-bold my-2  font-color' htmlFor="Email"> Fist Name:</label>
-                                   <input  {...register("fistName", { required: true })} name='fistName' className=' mt-2  border-2 p-2    border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="text" placeholder=" name" id="" />
-                                   {errors.name && <span className="text-red-500">Fist Name is required</span>}
+                              <div className=" md:flex gap-2 justify-start">
+                                   <div className=' w-full'>
+                                        <label className=' text-xl font-bold my-2  font-color' htmlFor="Email"> Fist Name:</label>
+                                        <input  {...register("fistName", { required: true })} name='fistName' className=' mt-2  border-2 p-2    border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="text" placeholder=" name" id="" />
+                                        {errors.name && <span className="text-red-500">Fist Name is required</span>}
+                                   </div>
+                                   <div className=' w-full'>
+                                        <label className=' text-xl font-bold my-2  font-color' htmlFor="Email">Last Name:</label>
+                                        <input  {...register("lastName", { required: true })} name='lastName' className=' mt-2  border-2 p-2    border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="text" placeholder=" name" id="" />
+                                        {errors.name && <span className="text-red-500"> Last Name is required</span>}
+                                   </div>
                               </div>
-                              <div className=' w-full'>
-                                   <label className=' text-xl font-bold my-2  font-color' htmlFor="Email">Last Name:</label>
-                                   <input  {...register("lastName", { required: true })} name='lastName' className=' mt-2  border-2 p-2    border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="text" placeholder=" name" id="" />
-                                   {errors.name && <span className="text-red-500"> Last Name is required</span>}
-                              </div>
-                               </div>
                               <div className=' w-full'>
                                    <label className=' text-xl font-bold my-2  font-color' htmlFor="Email"> Photo:</label>
                                    <input  {...register("photo", { required: true })} name='photo' className=' mt-2  border-2 p-2   border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="text" placeholder=" photo" id="" />
@@ -68,7 +85,7 @@ const Ragister = () => {
                               {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                               {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                               {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
-                             
+
                               <div className=' w-full'>
                                    <label className=' text-xl font-bold my-2  font-color' htmlFor="Email">Confirm Password:</label>
                                    <input  {...register("ConfirmPassword", {
@@ -77,7 +94,7 @@ const Ragister = () => {
 
 
                               </div>
-                               {machEorro ? <p className="  text-red-500"> {machEorro}</p> : "" }
+                              {machEorro ? <p className="  text-red-500"> {machEorro}</p> : ""}
                               <label className="label">
                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                               </label>
