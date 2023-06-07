@@ -1,0 +1,86 @@
+[
+     {
+          "name": "Robindro Shon",
+          "category": "popular",
+          "description": "Robindro Shongeet, also known as Rabindra Sangeet, refers to the songs composed by the legendary poet and philosopher Rabindranath Tagore. These songs hold deep cultural and emotional significance in Bengali music.",
+          "image": "https://images.pexels.com/photos/15922096/pexels-photo-15922096/free-photo-of-young-woman-in-a-summer-dress-playing-the-electric-guitar.jpeg?auto=compress&cs=tinysrgb&w=300"
+     },
+     {
+          "name": "Baul Music",
+          "category": "popular",
+          "description": "Baul music is a traditional folk music genre originating from Bengal. It encompasses a rich blend of mysticism, spirituality, and social commentary. The heartfelt songs often feature simple instruments and soulful vocals.",
+          "image": "https://img.freepik.com/free-vector/cultural-happy-vasant-panchami-indian-festival-background-design-vector_1055-12074.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais"
+     },
+     {
+          "name": "Baliyali",
+          "category": "popular",
+          "description": "Baliyali is a popular music genre in Bangladesh that originated from the coastal region. It reflects the vibrant and rhythmic culture of the area, with lively melodies and energetic dance beats.",
+          "image": "https://img.freepik.com/free-photo/friends-sitting-near-bonfire-smiling-speaking-resting-playing-guitar_176420-4172.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais"
+     },
+     {
+          "name": "Sari Music",
+          "category": "popular",
+          "description": "Sari music is a unique genre that combines elements of classical music and folk tunes from different regions of Bangladesh. It showcases the diverse musical traditions of the country, with intricate melodies and heartfelt expressions.",
+          "image": "https://img.freepik.com/premium-vector/happy-lohri-celebration-greeting-card-with-vector-illustration_30996-7640.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais"
+     },
+     {
+          "name": "Artcell",
+          "category": "Normal",
+          "image": "https://example.com/artcell.jpg",
+          "description": "Artcell is a renowned progressive rock band from Bangladesh known for their intricate compositions, powerful vocals, and thought-provoking lyrics. They have gained a massive fan following with hits like 'Oniket Prantor' and 'Dukkho Bilash'."
+     },
+     {
+          "name": "Warfaze",
+          "category": "popular",
+          "image": "https://img.freepik.com/premium-photo/teacher-assisting-boyto-play-guitar-classroom_107420-45345.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais",
+          "description": "Warfaze is one of the pioneering heavy metal bands in Bangladesh. With their energetic performances and hard-hitting music, they have been a significant influence on the local music scene for decades."
+     },
+     {
+          "name": "Shironamhin",
+          "category": "Normal",
+          "image": "https://example.com/shironamhin.jpg",
+          "description": "Shironamhin is a popular band known for their fusion of folk, rock, and psychedelic elements in their music. Their soulful compositions and unique sound have captivated audiences across generations."
+     },
+     {
+          "name": "Bangla Five",
+          "category": "popular",
+          "image": "https://img.freepik.com/premium-photo/band-adult-guitarists-rehearsing-studio_201836-2701.jpg?size=626&ext=jpg&ga=GA1.1.294406936.1686068593&semt=ais",
+          "description": "Bangla Five is a versatile band that explores various genres like rock, blues, and jazz fusion. With their exceptional musicianship, they have become a symbol of musical excellence in Bangladesh."
+     },
+     {
+          "name": "Miles",
+          "category": "Normal",
+          "image": "https://example.com/miles.jpg",
+          "description": "Miles is a legendary rock band that has been active since the 1980s. They are known for their powerful anthems and socially conscious lyrics, making them an iconic name in the Bangladeshi music industry."
+     },
+     {
+          "name": "Chirkutt",
+          "category": "Normal",
+          "image": "https://example.com/chirkutt.jpg",
+          "description": "Chirkutt is a unique band that blends traditional folk music with contemporary sounds. Their enchanting melodies and poetic lyrics have earned them a dedicated fan base."
+     },
+     {
+          "name": "Nogor Baul",
+          "category": "popular",
+          "image": "https://images.pexels.com/photos/15900816/pexels-photo-15900816/free-photo-of-portrait-of-a-man-playing-a-bass-guitar.jpeg?auto=compress&cs=tinysrgb&w=300",
+          "description": "Nogor Baul is a folk fusion band that celebrates the rich heritage of Baul music, a mystical and spiritual genre from Bengal. Their soul-stirring performances resonate deeply with audiences."
+     },
+     {
+          "name": "Arbovirus",
+          "category": "Normal",
+          "image": "https://example.com/arbovirus.jpg",
+          "description": "Arbovirus is a popular rock band known for their energetic stage presence and powerful lyrics. They have been instrumental in shaping the contemporary rock music scene in Bangladesh."
+     },
+     {
+          "name": "Lalon Band",
+          "category": "popular",
+          "image": "https://media.istockphoto.com/id/1162744681/photo/young-adult-friends-on-a-hike-celebrate-reaching-a-summit-near-the-coast-full-length-side-view.jpg?s=612x612&w=0&k=20&c=xh_vqfGooNOQGFUn24zuEolp9vzZBwm7LQuI6Rp9crQ=",
+          "description": "Lalon Band pays tribute to the great mystic poet Lalon Shah through their music. They fuse traditional Baul tunes with modern elements, creating a mesmerizing sonic experience."
+     },
+     {
+          "name": "Nemesis",
+          "category": "Normal",
+          "image": "https://example.com/nemesis.jpg",
+          "description": "Nemesis is a popular alternative rock band that has gained immense popularity for their emotional and introspective songs. Their music resonates deeply with the youth of Bangladesh."
+     }
+]
