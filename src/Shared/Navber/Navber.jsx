@@ -1,15 +1,29 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
+import { FaAlignJustify } from "react-icons/fa";
 
 
 const Navber = () => {
+     const { LogOut } = useContext(AuthContact)
+     const { user } = useContext(AuthContact);
+     const [acctive, setAcctive] = useState(false)
+     const handleLogOut = () => {
+          LogOut().then(result => {
+               console.log(result);
+          }).catch(error => {
+               console.log(error);
+          })
+     }
 
-     const {user}=useContext(AuthContact);
      const NavOptions = <>
           <li> <Link to={'/'}>Home</Link> </li>
           <li> <Link to={'/instructors'}>Instructors</Link> </li>
           <li> <Link to={'/classes'}>Classes</Link> </li>
+          {
+               user ?   <li> <Link to={'/dashboard'}>Dashboard</Link> </li> : ""
+          }
+         
 
      </>
 
@@ -17,7 +31,7 @@ const Navber = () => {
      return (
           <div>
                <div>
-                    <div className="navbar bg-[#fff]                                                    fixed max-w-screen-xl top-0  z-50    ">
+                    <div className="navbar bg-[#fff]     shadow-sm   fixed max-w-screen-xl top-0  z-50    ">
                          <div className="navbar-start">
                               <div className="dropdown">
                                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +50,19 @@ const Navber = () => {
                               </ul>
                          </div>
                          <div className="navbar-end">
-                               <Link to={'/ragister'}> Login</Link>
+                              {
+                                   user ? <>
+                                        <div className="  relative">
+                                             <div onClick={() => setAcctive(!acctive)} className=" relative flex gap-1 pl-3 pr-1 py-1 cursor-pointer   items-center justify-center border-2 rounded-2xl">
+                                                  <FaAlignJustify className=" text-lg"></FaAlignJustify>
+                                                  <img className=" border-2 border-[#D59578] h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
+                                             </div>
+                                             <div className={` ${acctive ? '  block' : "  hidden"} absolute   h-[200px] px-12  top-10 bg-[#D59578] p-4 rounded   right-1 `}>
+                                                  <button onClick={handleLogOut} className={`  bg-[#d31e9dc6]  px-4 py-1 rounded-md text-start text-white text-2xl font-semibold`}> Logout</button>
+                                             </div>
+                                        </div> </> : <>  <Link to={'/ragister'}> Login</Link></>
+                              }
+
                          </div>
                     </div>
                </div>
