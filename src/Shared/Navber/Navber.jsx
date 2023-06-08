@@ -21,7 +21,7 @@ const Navber = () => {
           <li> <Link to={'/instructors'}>Instructors </Link> </li>
           <li> <Link to={'/classes'}>Classes</Link> </li>
           {
-               user ? <li> <Link to={'/dashboard/userDashboard'}>Dashboard</Link> </li> : ""
+               user ? <li> <Link to={'/dashboard/selectClass'}>Dashboard</Link> </li> : ""
           }
          
 

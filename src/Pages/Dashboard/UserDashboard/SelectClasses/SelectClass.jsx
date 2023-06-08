@@ -3,9 +3,10 @@ import { AuthContact } from "../../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import SelectTitle from "../../../../Hooks/SelectTitle/SelectTitle";
-import { logEvent } from "firebase/analytics";
+
 import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -14,7 +15,7 @@ const SelectClass = () => {
      const [axiosSecure] = useAxiosSecure();
 
      const { user } = useContext(AuthContact)
-     const { data } = useQuery({
+     const { data, refetch } = useQuery({
           queryKey: ['cards', user?.email],
           queryFn: async () => {
                const res = await axiosSecure(`/cards?email=${user?.email}`)
@@ -23,14 +24,39 @@ const SelectClass = () => {
      })
 
      const total = data?.reduce((sum, item) => sum + item.price, 0)
-const token=localStorage.getItem('access-token')
+     const token = localStorage.getItem('access-token')
      const handleDelete = (id) => {
-          axios.post('http://localhost:5000/jwt')
-          .then(data=>{
-                localStorage.setItem('access-token', data.data.token)
-          }).catch(error=>{
-                console.log(error);
+
+          Swal.fire({
+               title: 'Are you sure?',
+               text: "You won't be able to revert this!",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    axios.delete(`http://localhost:5000/cards/${id}`,{
+                         headers:{
+                              authorization: ` bearer ${token}`
+                            }
+                    })
+                    .then(result=>{
+                         if(result.data.deletedCount){
+                              refetch()
+                              Swal.fire(
+                                   'Deleted!',
+                                   'Your file has been deleted.',
+                                   'success'
+                                 )
+                         }  
+                    })
+                    
+                    }
           })
+
+
 
      }
 
