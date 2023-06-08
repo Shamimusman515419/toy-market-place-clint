@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 
 const PriveteRoute = ({children}) => {
+      const location=useLocation()
      const {user,loading}=useContext(AuthContact);
 
 
@@ -15,7 +16,7 @@ const PriveteRoute = ({children}) => {
      if(user){
            return children
      }
-     return <Navigate to={'/login'}></Navigate>
+     return <Navigate to={'/login'}   state={{from: location}}></Navigate>
 };
 
 export default PriveteRoute;

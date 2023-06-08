@@ -8,7 +8,7 @@ import axios from "axios";
 export const AuthContact = createContext();
 const AuthProvider = ({ children }) => {
 
-     const [loading, setLoading] = useState(false)
+     const [loading, setLoading] = useState(true)
      const [user, setUser] = useState(null)
      const auth = getAuth(app);
      const GoogleProvider = new GoogleAuthProvider();
@@ -35,11 +35,11 @@ const AuthProvider = ({ children }) => {
                     }).catch(error=>{
                           console.log(error);
                     })
-
+                    setLoading(false)
                } else {
                     localStorage.removeItem('access-token')
                }
-               setLoading(false)
+             
 
           })
           return () => {

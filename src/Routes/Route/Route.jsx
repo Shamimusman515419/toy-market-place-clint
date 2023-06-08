@@ -9,6 +9,7 @@ import AdminDashboard from "../../Pages/Dashboard/AdminDashboard/AdminDashboard"
 import UserDashboard from "../../Pages/Dashboard/UserDashboard/UserDashboard";
 import Dashboard from "../../Layout/Dashboard/Dashboard";
 import PriveteRoute from "../PrivetRoute/PriveteRoute";
+import SelectClass from "../../Pages/Dashboard/UserDashboard/SelectClasses/SelectClass";
 
 
 const Route = createBrowserRouter([
@@ -52,6 +53,10 @@ const Route = createBrowserRouter([
                   {
                         path: 'adminDashboard',
                         element: <AdminDashboard></AdminDashboard>
+                  },
+                  {
+                        path: 'selectClass',
+                        element: <PriveteRoute> <SelectClass></SelectClass> </PriveteRoute> 
                   }
 
 

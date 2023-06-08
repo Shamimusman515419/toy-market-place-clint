@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../FirebaseConfig/Firebase.config";
@@ -13,10 +13,12 @@ import Swal from "sweetalert2";
 const Ragister = () => {
      const [machEorro, setMachError] = useState('')
      const { CreateUser } = useContext(AuthContact);
+     const navigete=useNavigate()
      const { register, handleSubmit, reset, formState: { errors } } = useForm();
      const onSubmit = data => {
           const auth = getAuth(app);
           const name = data.fistName + " " + data.lastName;
+     
           if (data.password == data.ConfirmPassword) {
                CreateUser(data.email, data.password).then(result => {
                     console.log(result.user);
@@ -46,7 +48,7 @@ const Ragister = () => {
                               })
 
                          reset()
-                         console.log("shamim", result);
+                         navigete('/')
                     }).catch((error) => {
                          console.log(error.message);
                     });

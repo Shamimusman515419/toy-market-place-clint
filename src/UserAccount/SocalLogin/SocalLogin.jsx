@@ -3,12 +3,14 @@ import { AuthContact } from '../../Pages/AuthProvider/AuthProvider';
 import { FaGoogle,FaFacebook,FaGithub } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SocalLogin = () => {
      const { GoogelSing } = useContext(AuthContact);
 
-
+     const navigete=useNavigate()
      const handleGoogle = () => {
+          
           GoogelSing().then(result=>{
                 console.log(result.user);
                 if(result.user){
@@ -25,7 +27,7 @@ const SocalLogin = () => {
                                    timer: 1000
                               });
                          }
-
+                         navigete('/')
                     }).catch(error => {
                          Swal.fire({
                               icon: 'error',

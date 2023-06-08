@@ -60,7 +60,7 @@ const Navber = () => {
                                              <div className={` ${acctive ? '  block' : "  hidden"} absolute   h-[200px] px-12  top-10 bg-[#D59578] p-4 rounded   right-1 `}>
                                                   <button onClick={handleLogOut} className={`  bg-[#d31e9dc6]  px-4 py-1 rounded-md text-start text-white text-2xl font-semibold`}> Logout</button>
                                              </div>
-                                        </div> </> : <>  <Link to={'/ragister'}> Login</Link></>
+                                        </div> </> : <>  <Link to={'/login'}> Login</Link></>
                               }
 
                          </div>

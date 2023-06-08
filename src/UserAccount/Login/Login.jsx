@@ -1,21 +1,32 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import SocalLogin from "../SocalLogin/SocalLogin";
-;
+import Swal from "sweetalert2";
+
 
 
 const Login = () => {
-     const { Login } = useContext(AuthContact)
+     const { Login } = useContext(AuthContact);
+     const location=useLocation();
+     const navigate=useNavigate();
+     let from = location.state?.from?.pathname || "/";
      const { register, handleSubmit, reset, formState: { errors } } = useForm();
      const onSubmit = (data) => {
 
           Login(data.email, data.password).then(result => {
+               Swal.fire('User login Successfully')
                reset()
-               console.log(result);
+               navigate(from)
+               
           }).catch(error => {
-               console.log(error.message);
+               Swal.fire({
+                    icon: 'error',
+                    title: `${error.massage}`,
+                    text: 'Something went wrong!',
+
+               });
           })
      }
 
