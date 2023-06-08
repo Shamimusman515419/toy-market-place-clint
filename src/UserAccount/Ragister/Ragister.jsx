@@ -6,6 +6,8 @@ import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../FirebaseConfig/Firebase.config";
 import SocalLogin from "../SocalLogin/SocalLogin";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const Ragister = () => {
@@ -21,8 +23,30 @@ const Ragister = () => {
                     updateProfile(auth.currentUser, {
                          displayName: name, photoURL: data.photo
                     }).then((result) => {
+                         const user = { email: data.email, name}
+                         axios.post('http://localhost:5000/users', user)
+                              .then(result => {
+                                   if (result.data.insertedId) {
+                                        Swal.fire({
+                                             position: 'top-end',
+                                             icon: 'success',
+                                             title: 'User created successfully.',
+                                             showConfirmButton: false,
+                                             timer: 1000
+                                        });
+                                   }
+
+                              }).catch(error => {
+                                   Swal.fire({
+                                        icon: 'error',
+                                        title: `${error.massage}`,
+                                        text: 'Something went wrong!',
+
+                                   })
+                              })
+
                          reset()
-                       console.log( "shamim", result);
+                         console.log("shamim", result);
                     }).catch((error) => {
                          console.log(error.message);
                     });

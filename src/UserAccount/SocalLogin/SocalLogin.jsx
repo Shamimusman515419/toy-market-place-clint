@@ -1,6 +1,8 @@
 import  { useContext } from 'react';
 import { AuthContact } from '../../Pages/AuthProvider/AuthProvider';
 import { FaGoogle,FaFacebook,FaGithub } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const SocalLogin = () => {
      const { GoogelSing } = useContext(AuthContact);
@@ -9,6 +11,30 @@ const SocalLogin = () => {
      const handleGoogle = () => {
           GoogelSing().then(result=>{
                 console.log(result.user);
+                if(result.user){
+                    const user=result.user;
+                    const data= {email:user.email, name:user.displayName}
+                    axios.post('http://localhost:5000/users', data)
+                    .then(result => {
+                         if (result.data.insertedId) {
+                              Swal.fire({
+                                   position: 'top-end',
+                                   icon: 'success',
+                                   title: 'User created successfully.',
+                                   showConfirmButton: false,
+                                   timer: 1000
+                              });
+                         }
+
+                    }).catch(error => {
+                         Swal.fire({
+                              icon: 'error',
+                              title: `${error.massage}`,
+                              text: 'Something went wrong!',
+
+                         })
+                    })
+                }
           }).catch(error=>{
                console.log(error);
           })
