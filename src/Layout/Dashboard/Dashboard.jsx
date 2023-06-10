@@ -8,7 +8,7 @@ import { FaWallet } from "react-icons/fa";
 
 const Dashboard = () => {
      const { user } = useContext(AuthContact);
-    
+
      return (
           <div>
                <Navber></Navber>
@@ -25,12 +25,20 @@ const Dashboard = () => {
 
                          <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                               <div className=" text-center  flex  flex-col justify-center items-center mx-auto ">
-                                   <img className=" max-w-[150px] max-h-[150px] rounded-full border-2 border-[#D59578]" src={user?.photoURL } alt="" />
+                                   <img className=" max-w-[150px] max-h-[150px] rounded-full border-2 border-[#D59578]" src={user?.photoURL} alt="" />
                                    <h1 className=" text-xl font-bold"> {user?.displayName} </h1>
                               </div>
                               {/* Sidebar content here */}
-                              <li> <NavLink to="/dashboard/selectClass"> Selected Classes: </NavLink> </li>
-                              <li><NavLink to="/dashboard/manngeitem"><FaWallet></FaWallet> Manage Item</NavLink></li>
+                              <li> <NavLink className={({ isActive }) =>
+                                   isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              } to="/dashboard/selectClass"> Selected Classes: </NavLink>
+
+                              </li>
+                              <li><NavLink className={({ isActive }) =>
+                                   isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              }  to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
                               <li><a> Add Card</a></li>
                          </ul>
 

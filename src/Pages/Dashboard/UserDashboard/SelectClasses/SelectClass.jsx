@@ -1,27 +1,17 @@
-import { useContext } from "react";
-import { AuthContact } from "../../../AuthProvider/AuthProvider";
-import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
+
 import SelectTitle from "../../../../Hooks/SelectTitle/SelectTitle";
 
 import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import useCard from "../../../../Hooks/useCard/useCard";
 
 
 
 
 const SelectClass = () => {
-     const [axiosSecure] = useAxiosSecure();
-
-     const { user } = useContext(AuthContact)
-     const { data, refetch } = useQuery({
-          queryKey: ['cards', user?.email],
-          queryFn: async () => {
-               const res = await axiosSecure(`/cards?email=${user?.email}`)
-               return res.data
-          }
-     })
+  const  [data,refetch]= useCard()
 
      const total = data?.reduce((sum, item) => sum + item.price, 0)
      const token = localStorage.getItem('access-token')
@@ -69,7 +59,6 @@ const SelectClass = () => {
                     <h1 className=" text-2xl font-medium"> Total Classes : {data && data.length} </h1>
                     <h1 className=" text-2xl font-medium">Total price : $ {total} </h1>
 
-                    <button className=" text-3xl font-medium   text-white py-1 px-5 rounded-md bg-[#D59578] flex justify-center items-center ">Pay</button>
 
                </div>
 
@@ -107,8 +96,9 @@ const SelectClass = () => {
                                                        <p className=" text-xl font-semibold"> {item.name}</p>
                                                   </td>
                                                   <td> ${item.price}</td>
-                                                  <th>
-                                                       <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded"><FaTrashAlt></FaTrashAlt></button>
+                                                  <th className=" flex gap-4 items-center justify-center">
+                                                  <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded"><FaTrashAlt></FaTrashAlt></button>
+                                                    <Link to={`/dashboard/payment/${item._id}`} className=" text-xl font-medium   text-white py-1 px-5 rounded-md bg-[#D59578] "> Pay </Link>
                                                   </th>
                                              </tr>
                                         ))

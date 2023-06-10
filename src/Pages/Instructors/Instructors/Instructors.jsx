@@ -6,9 +6,9 @@ import InstructorCard from "./InstructorCard";
 const Instructors = () => {
 
      const { data } = useQuery({
-          queryKey: ["popularInstacort"],
+          queryKey: ["instractor"],
           queryFn: async () => {
-               const res = await fetch('Instrator.json');
+               const res = await fetch('http://localhost:5000/instractor');
                return res.json();
           }
      })

@@ -10,6 +10,8 @@ import UserDashboard from "../../Pages/Dashboard/UserDashboard/UserDashboard";
 import Dashboard from "../../Layout/Dashboard/Dashboard";
 import PriveteRoute from "../PrivetRoute/PriveteRoute";
 import SelectClass from "../../Pages/Dashboard/UserDashboard/SelectClasses/SelectClass";
+import Payment from "../../Pages/Payment/payment/payment";
+import PaymentHistroy from "../../Pages/Dashboard/UserDashboard/PaymentHistroy/PaymentHistroy";
 
 
 const Route = createBrowserRouter([
@@ -57,6 +59,15 @@ const Route = createBrowserRouter([
                   {
                         path: 'selectClass',
                         element: <PriveteRoute> <SelectClass></SelectClass> </PriveteRoute> 
+                  },
+                  {
+                        path: 'history',
+                        element: <PriveteRoute> <PaymentHistroy></PaymentHistroy> </PriveteRoute> 
+                  },
+                  {
+                        path: 'payment/:id',
+                        element:  <PriveteRoute> <Payment></Payment></PriveteRoute>,
+                        loader: ({params})=> fetch(`http://localhost:5000/payment/${params.id}`)
                   }
 
 
