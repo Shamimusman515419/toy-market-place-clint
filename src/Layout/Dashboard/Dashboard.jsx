@@ -4,11 +4,13 @@ import Navber from "../../Shared/Navber/Navber";
 import { useContext } from "react";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { FaWallet } from "react-icons/fa";
+import useAdmin from "../../Hooks/Admin/useAdmin";
 
 
 const Dashboard = () => {
      const { user } = useContext(AuthContact);
-
+     const [Admin, AdminLoading] = useAdmin();
+     console.log(Admin);
      return (
           <div>
                <Navber></Navber>
@@ -29,17 +31,34 @@ const Dashboard = () => {
                                    <h1 className=" text-xl font-bold"> {user?.displayName} </h1>
                               </div>
                               {/* Sidebar content here */}
-                              <li> <NavLink className={({ isActive }) =>
-                                   isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                              } to="/dashboard/selectClass"> Selected Classes: </NavLink>
+                              {
+                                   Admin ? <>
+                                        <li> <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                              </li>
-                              <li><NavLink className={({ isActive }) =>
-                                   isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+                                        } to="/dashboard/manage"> Manage  Admin </NavLink>
 
-                              }  to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-                              <li><a> Add Card</a></li>
+                                        </li>
+                                        <li><NavLink className={({ isActive }) =>
+                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                                        } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+
+                                   </> : <>
+                                        <li> <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                                        } to="/dashboard/selectClass"> Selected Classes: </NavLink>
+
+                                        </li>
+                                        <li><NavLink className={({ isActive }) =>
+                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                                        } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+                                   </>
+                              }
+
                          </ul>
 
                     </div>

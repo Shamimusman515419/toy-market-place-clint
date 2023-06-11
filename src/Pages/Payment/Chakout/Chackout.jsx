@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import useCard from "../../../Hooks/useCard/useCard";
 
 
-const Chackout = ({ price, id }) => {
+const Chackout = ({ price, id,classData }) => {
      const { user } = useContext(AuthContact);
      const [data, refetch] = useCard();
      const Navigete = useNavigate();
@@ -80,12 +80,14 @@ const Chackout = ({ price, id }) => {
                     email: user?.email,
                     name: user?.name,
                     price,
+                    image: classData.image,
+                    name: classData.name,
                     transactionId: paymentIntent.id,
                     date: new Date(),
 
                }
 
-               axiosSecure.post('/payment', { payment })
+               axiosSecure.post('/payment', payment )
                     .then(result => {
                          console.log(result);
                          if (result.data.insertedId) {
