@@ -99,7 +99,7 @@ const Chackout = ({ price, id,classData }) => {
                                              Swal.fire({
                                                   position: 'mid',
                                                   icon: 'success',
-                                                  title: ' Payment',
+                                                  title: ' Payment success ',
                                                   showConfirmButton: false,
                                                   timer: 1500
                                              })
