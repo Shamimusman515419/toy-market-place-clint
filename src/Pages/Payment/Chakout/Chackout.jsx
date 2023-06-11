@@ -82,6 +82,7 @@ const Chackout = ({ price, id,classData }) => {
                     price,
                     image: classData.image,
                     name: classData.name,
+                    id: classData._id,
                     transactionId: paymentIntent.id,
                     date: new Date(),
 

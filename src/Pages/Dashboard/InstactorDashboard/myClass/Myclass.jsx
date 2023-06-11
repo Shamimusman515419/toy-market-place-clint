@@ -3,7 +3,7 @@ import { AuthContact } from "../../../AuthProvider/AuthProvider";
 import { useContext } from "react";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
 import SelectTitle from "../../../../Hooks/SelectTitle/SelectTitle";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
 const Myclass = () => {
 
@@ -17,11 +17,24 @@ const Myclass = () => {
                return result.data;
           }
      })
+     const { data: orderState, refetch } = useQuery({
+          queryKey: ['/order-stats',],
+          queryFn: async () => {
+               const result = await axiosSecure.get(`/order-stats`);
+               return result.data;
+          }
+     })
      console.log(data);
+     console.log(orderState);
+     const countNumber= orderState?.filter(item=> item.id == "6486022212f29561a2dc1d51" );
+     console.log(countNumber);
+ 
+   
 
-     const handleDelete=(item)=>{
+     const handleUpdate=(item)=>{
            console.log(item);
      }
+
      return (
           <div>
               <div>
@@ -36,10 +49,12 @@ const Myclass = () => {
                                    {/* head */}
                                    <thead>
                                         <tr>
-                                             <th>#</th>
+                                            <th>#</th>
+                                             <th>Image</th>
                                              <th>Name</th>
-                                             <th>Email</th>
+                                             <th>Total Enrolled Students</th>
                                              <th>Role</th>
+                                             <th>Feedback </th>
                                              <th>Acton</th>
                                         </tr>
                                    </thead>
@@ -48,14 +63,18 @@ const Myclass = () => {
                                              data?.map((item, index) =>
                                                   <tr key={item._id}>
                                                        <th>{index + 1}</th>
+                                                       <td> <img className=" h-[60px] w-[60px] rounded-xl" src={item.image} alt="" /></td>
                                                        <td>{item.name}</td>
-                                                       <td>{item.email}</td>
+                                                       <td>0</td>
 
                                                        <td>
-                                                       <button  className=" bg-[#D59578] text-white p-2 rounded mx-1"> Make Instructor</button> 
+                                                        <p> {item.role} </p>
                                                        </td>
                                                        <td>
-                                                            <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded"><FaTrashAlt></FaTrashAlt></button>
+                                                        <p> {"null"} </p>
+                                                       </td>
+                                                       <td>
+                                                            <button onClick={() => handleUpdate(item._id)} className="  bg-[#375cd67c]  text-2xl  p-2 rounded"><FaEdit></FaEdit></button>
                                                        </td>
                                                   </tr>
                                              )

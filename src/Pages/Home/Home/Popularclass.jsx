@@ -32,8 +32,8 @@ const Popularclass = () => {
                <SelectTitle subtitle=" Dedication to Teaching" HadersTitle=" Popular Class "></SelectTitle>
 
                <div>
-
-                    <Swiper
+  
+                     <Swiper
                          slidesPerView={4}
                          spaceBetween={30}
                          pagination={{

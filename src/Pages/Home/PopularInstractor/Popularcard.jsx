@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
-
+import { motion } from 'framer-motion';
 
 const Popularcard = ({ card }) => {
 
      const { img, name,numStudents ,email} = card
      return (
+          <motion.button
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          Click Me
+       
           <div>
                <div className="card w-96 bg-base-100 shadow">
                     <figure><img className=" h-80 w-full" src={img} alt="Shoes" /></figure>
@@ -16,6 +23,7 @@ const Popularcard = ({ card }) => {
                     </div>
                </div>
           </div>
+          </motion.button>
      );
 };
 

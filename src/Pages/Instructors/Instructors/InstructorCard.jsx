@@ -1,8 +1,15 @@
 
-
+import { motion } from 'framer-motion';
 const InstructorCard = ({card}) => {
      const {name,email,img,category,numStudents,description}=card
-     return (
+     return ( 
+          <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
+        <p>This is a new animation example using Framer Motion!</p>
+    
           <div className=" m-1  rounded-xl   shadow overflow-hidden  ">
                 <div className=" md:grid grid-cols-2 gap-5 items-center justify-center ">
                     <div className=" w-full overflow-hidden  h-80">
@@ -17,6 +24,7 @@ const InstructorCard = ({card}) => {
                     </div>
                 </div>
           </div>
+          </motion.div>
      );
 };
 

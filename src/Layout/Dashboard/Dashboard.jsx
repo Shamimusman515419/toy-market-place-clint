@@ -1,9 +1,9 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer/Footer";
 import Navber from "../../Shared/Navber/Navber";
 import { useContext } from "react";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
-import { FaWallet } from "react-icons/fa";
+import { FaCcApplePay, FaCreativeCommonsBy, FaUsers, FaWallet } from "react-icons/fa";
 import useAdmin from "../../Hooks/Admin/useAdmin";
 
 import useInstractor from "../../Hooks/useInstruct/useInstractor";
@@ -29,75 +29,48 @@ const Dashboard = () => {
                          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
 
-                         <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+                         <ul className="menu p-4 w-80 h-full bg-[#d59578b8] ">
                               <div className=" text-center  flex  flex-col justify-center items-center mx-auto ">
                                    <img className=" max-w-[150px] max-h-[150px] rounded-full border-2 border-[#D59578]" src={user?.photoURL} alt="" />
                                    <h1 className=" text-xl font-bold"> {user?.displayName} </h1>
                               </div>
                               {/* Sidebar content here */}
 
-                              {
-                                   Admin == true ? <>
-                                        <li> <NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+                                {Admin == true ? <>
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ?" text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
-                                        } to="/dashboard/manageclassas"> Manage  Classes </NavLink>
+                                        } to="/dashboard/manageclassas"> <FaCreativeCommonsBy></FaCreativeCommonsBy>  <span> Manage  Classes </span> </NavLink>
 
-                                        </li>
-                                        <li><NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                                        } to="/dashboard/manageusers"><FaWallet></FaWallet> Manage Users</NavLink></li>
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
+
+                                        } to="/dashboard/manageusers"> <FaUsers></FaUsers> <span> Manage Users</span></NavLink>
 
                                    </> : Instructor == true ? <>
-                                        <li> <NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ?" text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
                                         } to="/dashboard/addclasses"> Add a Class </NavLink>
 
-                                        </li>
-                                        <li><NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                                        } to="/dashboard/myclass"><FaWallet></FaWallet> My Classes</NavLink></li>
-                                   </> : <>
-                                        <li> <NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
+                                        } to="/dashboard/myclass"><FaWallet></FaWallet>  <span> My Classes</span> </NavLink>
+                                     </> : <>
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
                                         } to="/dashboard/selectClass"> Selected Classes: </NavLink>
 
-                                        </li>
-                                        <li><NavLink className={({ isActive }) =>
-                                             isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                                        } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+                                        <NavLink className={({ isActive }) =>
+                                             isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
+
+                                        } to="/dashboard/history"><FaCcApplePay></FaCcApplePay> Payment History</NavLink>
                                    </>
 
-
-                                   // Admin ? <>
-                                   //           <li> <NavLink className={({ isActive }) =>
-                                   //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
-
-                                   //           } to="/dashboard/manageclassas"> Manage  Classes </NavLink>
-
-                                   //           </li>
-                                   //           <li><NavLink className={({ isActive }) =>
-                                   //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
-
-                                   //           } to="/dashboard/manageusers"><FaWallet></FaWallet> Manage Users</NavLink></li>
-
-                                   //      </> : <>
-                                   //           <li> <NavLink className={({ isActive }) =>
-                                   //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
-
-                                   //           } to="/dashboard/selectClass"> Selected Classes: </NavLink>
-
-                                   //           </li>
-                                   //           <li><NavLink className={({ isActive }) =>
-                                   //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
-
-                                   //           } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-                                   //      </>
                               }
 
                          </ul>

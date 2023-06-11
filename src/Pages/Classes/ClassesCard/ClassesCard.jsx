@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure/useAxiosSecure";
-
+import { motion } from 'framer-motion';
 
 const ClassesCard = ({ card }) => {
   const [axiosSecure] = useAxiosSecure();
@@ -55,6 +55,13 @@ const ClassesCard = ({ card }) => {
 
   return (
     <div className=" w-full">
+       <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <h1>Welcome to My Animation</h1>
+    
       <div className="  relative  bg-white shadow-lg rounded-lg overflow-hidden">
         <img className=" relative w-full h-80" src={image} alt='img-fluid' />
         <div className="p-4 text-center relative">
@@ -70,7 +77,7 @@ const ClassesCard = ({ card }) => {
         <p className=" left-0 text-lg absolute top-0  font-semibold text-white  bg-[#D59578] px-4 py-1 ">${price}</p>
       </div>
 
- 
+      </motion.div>
 
     </div>
   );
