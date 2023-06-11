@@ -12,6 +12,9 @@ import PriveteRoute from "../PrivetRoute/PriveteRoute";
 import SelectClass from "../../Pages/Dashboard/UserDashboard/SelectClasses/SelectClass";
 import Payment from "../../Pages/Payment/payment/payment";
 import PaymentHistroy from "../../Pages/Dashboard/UserDashboard/PaymentHistroy/PaymentHistroy";
+import ManageClass from "../../Pages/Dashboard/AdminDashboard/ManageClasses/ManageClass";
+import ManageUsers from "../../Pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
+import RouteAddmin from "../AddminRoutes/AddminRoute";
 
 
 const Route = createBrowserRouter([
@@ -63,6 +66,14 @@ const Route = createBrowserRouter([
                   {
                         path: 'history',
                         element: <PriveteRoute> <PaymentHistroy></PaymentHistroy> </PriveteRoute> 
+                  },
+                  {
+                        path: 'manageclassas',
+                        element: <RouteAddmin> <ManageClass></ManageClass> </RouteAddmin> 
+                  },
+                  {
+                        path: 'manageusers',
+                        element: <PriveteRoute> <ManageUsers></ManageUsers> </PriveteRoute> 
                   },
                   {
                         path: 'payment/:id',

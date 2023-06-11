@@ -6,10 +6,14 @@ import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { FaWallet } from "react-icons/fa";
 import useAdmin from "../../Hooks/Admin/useAdmin";
 
+import useInstractor from "../../Hooks/useInstruct/useInstractor";
+
 
 const Dashboard = () => {
      const { user } = useContext(AuthContact);
      const [Admin, AdminLoading] = useAdmin();
+     const [Instructor,isLoading]= useInstractor();
+     console.log(Instructor);
      console.log(Admin);
      return (
           <div>
@@ -31,20 +35,31 @@ const Dashboard = () => {
                                    <h1 className=" text-xl font-bold"> {user?.displayName} </h1>
                               </div>
                               {/* Sidebar content here */}
-
+ 
                               {
-                                   Admin ? <>
+                                  Admin ==  true  ? <>
+                                  <li> <NavLink className={({ isActive }) =>
+                                       isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                                  } to="/dashboard/manageclassas"> Manage  Classes </NavLink>
+
+                                  </li>
+                                  <li><NavLink className={({ isActive }) =>
+                                       isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                                  } to="/dashboard/manageusers"><FaWallet></FaWallet> Manage Users</NavLink></li>
+
+                             </> : Instructor ==   true? <>
                                         <li> <NavLink className={({ isActive }) =>
                                              isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                                        } to="/dashboard/manage"> Manage  Admin </NavLink>
+                                        } to="/dashboard/selectClass"> Instructor: </NavLink>
 
                                         </li>
                                         <li><NavLink className={({ isActive }) =>
                                              isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
 
-                                        } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-
+                                        } to="/dashboard/history"><FaWallet></FaWallet> Instructor</NavLink></li>
                                    </> : <>
                                         <li> <NavLink className={({ isActive }) =>
                                              isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
@@ -57,6 +72,32 @@ const Dashboard = () => {
 
                                         } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
                                    </>
+                              
+                              
+                              // Admin ? <>
+                              //           <li> <NavLink className={({ isActive }) =>
+                              //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              //           } to="/dashboard/manageclassas"> Manage  Classes </NavLink>
+
+                              //           </li>
+                              //           <li><NavLink className={({ isActive }) =>
+                              //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              //           } to="/dashboard/manageusers"><FaWallet></FaWallet> Manage Users</NavLink></li>
+
+                              //      </> : <>
+                              //           <li> <NavLink className={({ isActive }) =>
+                              //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              //           } to="/dashboard/selectClass"> Selected Classes: </NavLink>
+
+                              //           </li>
+                              //           <li><NavLink className={({ isActive }) =>
+                              //                isActive ? " text-white bg-blue-600 text-xl font-medium py-1 px-5" : " text-xl font-medium py-1 px-5"
+
+                              //           } to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
+                              //      </>
                               }
 
                          </ul>
