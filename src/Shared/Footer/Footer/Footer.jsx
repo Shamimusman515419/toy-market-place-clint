@@ -15,7 +15,7 @@ const Footer = () => {
                </div>
                <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
-                         <h3 className="tracking-wide text-xl font-bold uppercase dark:text-gray-50">Product</h3>
+                         <h3 className="tracking-wide text-xl font-bold uppercase dark:text-gray-50">Classes</h3>
                          <ul className="space-y-1">
                               <li>
                                    <a rel="noopener noreferrer" href="#">Features</a>
@@ -27,7 +27,7 @@ const Footer = () => {
                                    <a rel="noopener noreferrer" href="#">Pricing</a>
                               </li>
                               <li>
-                                   <a rel="noopener noreferrer" href="#">FAQ</a>
+                                   <a rel="noopener noreferrer" href="#">blog</a>
                               </li>
                          </ul>
                     </div>
@@ -38,18 +38,18 @@ const Footer = () => {
                                    <a rel="noopener noreferrer" href="#">Privacy</a>
                               </li>
                               <li>
-                                   <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                   <a rel="noopener noreferrer" href="#">Music Band</a>
                               </li>
                          </ul>
                     </div>
                     <div className="space-y-3">
-                         <h3 className="uppercase text-xl font-bold dark:text-gray-50">Developers</h3>
+                         <h3 className="uppercase text-xl font-bold dark:text-gray-50">Instructor</h3>
                          <ul className="space-y-1">
                               <li>
-                                   <a rel="noopener noreferrer" href="#">Public API</a>
+                                   <a rel="noopener noreferrer" href="#"> Classes</a>
                               </li>
                               <li>
-                                   <a rel="noopener noreferrer" href="#">Documentation</a>
+                                   <a rel="noopener noreferrer" href="#">Student</a>
                               </li>
                               <li>
                                    <a rel="noopener noreferrer" href="#">Guides</a>
