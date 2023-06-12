@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { FaAlignJustify } from "react-icons/fa";
+import UseToggle from "../../Hooks/useToggle/usetoggle";
 
 
 const Navber = () => {
@@ -20,10 +21,11 @@ const Navber = () => {
           <li> <Link to={'/'}>Home</Link> </li>
           <li> <Link to={'/instructors'}>Instructors </Link> </li>
           <li> <Link to={'/classes'}>Classes</Link> </li>
+         
           {
                user ? <li> <Link to={'/dashboard/selectClass'}>Dashboard</Link> </li> : ""
           }
-         
+         <li>  <UseToggle></UseToggle></li>
 
      </>
 

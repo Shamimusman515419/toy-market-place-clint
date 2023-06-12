@@ -14,7 +14,7 @@ const [axiosSecure]=useAxiosSecure();
      const onSubmit = data => {
 
           const { name, image, price, email,InstructorName, seats, description, category } = data
-          const Classes = { name, image, price : parseFloat(price) ,email, InstructorName, seats: parseFloat(seats), description, category };
+          const Classes = { name, image, role: "pending", price : parseFloat(price) ,email, InstructorName, seats: parseFloat(seats), description, category };
 
           axiosSecure.post('/classes', Classes)
           .then(data=>{

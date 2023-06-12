@@ -17,12 +17,14 @@ import ManageUsers from "../../Pages/Dashboard/AdminDashboard/ManageUsers/Manage
 import RouteAddmin from "../AddminRoutes/AddminRoute";
 import InstructorClasses from "../../Pages/Dashboard/InstactorDashboard/InstructorClasses/InstructorClasses";
 import Myclass from "../../Pages/Dashboard/InstactorDashboard/myClass/Myclass";
+import Errorpage from "../../Hooks/ErrorPage/Errorpage";
 
 
 const Route = createBrowserRouter([
       {
             path: '/',
             element: <Main></Main>,
+            errorElement:<Errorpage></Errorpage>,
             children: [
                   {
                         path: '/',

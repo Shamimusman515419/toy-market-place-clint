@@ -9,11 +9,11 @@ const Myclass = () => {
 
      const { user } = useContext(AuthContact);
      const [axiosSecure] = useAxiosSecure();
-     console.log(user);
+  
      const { data } = useQuery({
-          queryKey: ['myclass', user.email],
+          queryKey: ['myclass', user?.email],
           queryFn: async () => {
-               const result = await axiosSecure.get(`/classes/${user.email}`);
+               const result = await axiosSecure.get(`/classes/${user?.email}`);
                return result.data;
           }
      })
@@ -24,8 +24,9 @@ const Myclass = () => {
                return result.data;
           }
      })
-     console.log(data);
+    
      console.log(orderState);
+     console.log(data);
      const countNumber= orderState?.filter(item=> item.id == "6486022212f29561a2dc1d51" );
      console.log(countNumber);
  

@@ -3,7 +3,7 @@ import Footer from "../../Shared/Footer/Footer/Footer";
 import Navber from "../../Shared/Navber/Navber";
 import { useContext } from "react";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
-import { FaCcApplePay, FaCreativeCommonsBy, FaUsers, FaWallet } from "react-icons/fa";
+import { FaBook, FaBookOpen, FaBox, FaCcApplePay, FaCreativeCommonsBy, FaShirtsinbulk, FaUsers, FaWallet } from "react-icons/fa";
 import useAdmin from "../../Hooks/Admin/useAdmin";
 
 import useInstractor from "../../Hooks/useInstruct/useInstractor";
@@ -40,7 +40,7 @@ const Dashboard = () => {
                                         <NavLink className={({ isActive }) =>
                                              isActive ?" text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
-                                        } to="/dashboard/manageclassas"> <FaCreativeCommonsBy></FaCreativeCommonsBy>  <span> Manage  Classes </span> </NavLink>
+                                        } to="/dashboard/manageclassas"> <FaBookOpen></FaBookOpen>  <span> Manage  Classes </span> </NavLink>
 
 
                                         <NavLink className={({ isActive }) =>
@@ -52,17 +52,17 @@ const Dashboard = () => {
                                         <NavLink className={({ isActive }) =>
                                              isActive ?" text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
-                                        } to="/dashboard/addclasses"> Add a Class </NavLink>
+                                        } to="/dashboard/addclasses"> <FaBox></FaBox>  <span> Add a Class</span> </NavLink>
 
 
                                         <NavLink className={({ isActive }) =>
                                              isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
 
-                                        } to="/dashboard/myclass"><FaWallet></FaWallet>  <span> My Classes</span> </NavLink>
+                                        } to="/dashboard/myclass"><FaBook></FaBook>  <span> My Classes</span> </NavLink>
                                      </> : <>
                                         <NavLink className={({ isActive }) =>
                                              isActive ? " text-white flex gap-3 items-center bg-blue-600  my-3 text-xl font-medium py-1   rounded-md px-5" : " text-xl gap-3   rounded-md flex items-center  font-medium py-1 px-5"
-                                        } to="/dashboard/selectClass"> Selected Classes: </NavLink>
+                                        } to="/dashboard/selectClass"> <FaShirtsinbulk></FaShirtsinbulk>  <span>  Selected Classes</span> </NavLink>
 
 
                                         <NavLink className={({ isActive }) =>
