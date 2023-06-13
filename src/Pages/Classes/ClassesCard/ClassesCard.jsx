@@ -6,12 +6,15 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure/useAxiosSecure";
 import { motion } from 'framer-motion';
 import { FaAsterisk } from "react-icons/fa";
+import useAdmin from "../../../Hooks/Admin/useAdmin";
+import useInstractor from "../../../Hooks/useInstruct/useInstractor";
 
 const ClassesCard = ({ card }) => {
   const [axiosSecure] = useAxiosSecure();
   const location = useLocation();
   const navigate = useNavigate();
-  // const [acctive, setAcctive] = useState(false)
+      const [Admin] = useAdmin();
+     const [Instructor] = useInstractor();
   const { user } = useContext(AuthContact)
   const { image, price, Enrolled, seats, name, InstructorName, description } = card;
 
@@ -80,7 +83,7 @@ const ClassesCard = ({ card }) => {
             <h1 className=" text-base font-semibold my-2 D59578"> Instructor: {InstructorName} </h1>
 
             <p className=" font-color text-sm "> {description} </p>
-            <button disabled={active} onClick={() => handleSelet(card)} className="mt-2   text-white bg-[#D59578]  max-w-xs  w-full font-bold py-2 px-4 rounded">
+            <button disabled={active || Admin || Instructor} onClick={() => handleSelet(card)} className="mt-2   text-white bg-[#D59578]  max-w-xs  w-full font-bold py-2 px-4 rounded">
               Select
             </button>
 
