@@ -99,7 +99,7 @@ const Route = createBrowserRouter([
                   {
                         path:'feedback/:id',
                         element: <PriveteRoute> <Feedback></Feedback> </PriveteRoute>,
-                        loader:({params})=> fetch(`http://localhost:5000/classes/feedback/${params.id}`)
+                        loader:({params})=> fetch(`https://music-school-server.vercel.app/classes/feedback/${params.id}`)
                         
                   },
                   {
