@@ -5,6 +5,7 @@
           "category": "popular",
           "price": 120,
           "seats": 10,
+          "Enrolled ": 0,
           "description": "Robindro Shongeet, also known as Rabindra Sangeet, refers to the songs composed by the legendary poet and philosopher Rabindranath Tagore. These songs hold deep cultural and emotional significance in Bengali music.",
           "image": "https://images.pexels.com/photos/15922096/pexels-photo-15922096/free-photo-of-young-woman-in-a-summer-dress-playing-the-electric-guitar.jpeg?auto=compress&cs=tinysrgb&w=300"
      },
@@ -12,6 +13,7 @@
           "name": "Baul Music",
           "InstructorName": "Jessica Davis",
           "category": "popular",
+          "Enrolled ": 0,
           "price": 200,
           "seats": 50,
           "description": "Baul music is a traditional folk music genre originating from Bengal. It encompasses a rich blend of mysticism, spirituality, and social commentary. The heartfelt songs often feature simple instruments and soulful vocals.",
@@ -20,6 +22,7 @@
      {
           "name": "Baliyali",
           "price": 250,
+          "Enrolled ": 0,
           "seats": 15,
           "InstructorName": "Mark Thompson",
           "category": "popular",
@@ -30,6 +33,7 @@
           "name": "Sari Music",
           "category": "popular",
           "price": 220,
+          "Enrolled ": 0,
           "seats": 22,
           "InstructorName": "Jennifer Lee",
           "description": "Sari music is a unique genre that combines elements of classical music and folk tunes from different regions of Bangladesh. It showcases the diverse musical traditions of the country, with intricate melodies and heartfelt expressions.",
@@ -39,6 +43,7 @@
           "name": "Artcell",
           "category": "Normal",
           "price": 120,
+          "Enrolled ": 0,
           "seats": 40,
           "InstructorName": "Alex Rodriguez",
           "image": "https://img.freepik.com/premium-photo/education-concept_40429-158.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
@@ -47,6 +52,7 @@
      {
           "name": "Warfaze",
           "price": 290,
+          "Enrolled ": 0,
           "seats": 30,
           "InstructorName": "Emily Adams",
           "category": "popular",
@@ -56,6 +62,7 @@
      {
           "name": "Shironamhin",
           "seats": 15,
+          "Enrolled ": 0,
           "category": "Normal",
           "InstructorName": "Emily Adams",
           "price": 110,
@@ -64,6 +71,7 @@
      },
      {
           "name": "Bangla Five",
+          "Enrolled ": 0,
           "seats": 26,
           "InstructorName": "Daniel Thompson",
           "category": "popular",
@@ -74,6 +82,7 @@
      {
           "name": "Miles",
           "category": "Normal",
+          "Enrolled ": 0,
           "seats": 10,
           "price": 100,
           "InstructorName": "Emily Adams",
@@ -84,6 +93,7 @@
           "name": "Chirkutt",
           "category": "Normal",
           "price": 190,
+          "Enrolled ": 0,
           "seats": 10,
           "InstructorName": "Daniel Thompson",
           "image": "https://img.freepik.com/free-photo/group-kids-spending-time-after-school-together_155003-19044.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
@@ -94,6 +104,7 @@
           "category": "popular",
           "InstructorName": "John Smith",
           "seats": 25,
+          "Enrolled ": 0,
           "price": 120,
           "image": "https://images.pexels.com/photos/15900816/pexels-photo-15900816/free-photo-of-portrait-of-a-man-playing-a-bass-guitar.jpeg?auto=compress&cs=tinysrgb&w=300",
           "description": "Nogor Baul is a folk fusion band that celebrates the rich heritage of Baul music, a mystical and spiritual genre from Bengal. Their soul-stirring performances resonate deeply with audiences."
@@ -102,6 +113,7 @@
           "name": "Arbovirus",
           "category": "Normal",
           "seats": 30,
+          "Enrolled": 0,
           "price": 150,
           "InstructorName": "Rebecca Wilson",
           "image": "https://img.freepik.com/premium-photo/rock-band-playing-recording-studio_186382-7065.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.1.294406936.1686068593&semt=ais",
@@ -109,6 +121,7 @@
      },
      {
           "name": "Lalon Band",
+          "Enrolled ": 0,
           "price": 260,
           "InstructorName": "Sarah Johnson",
           "category": "popular",
@@ -119,9 +132,31 @@
           "seats": 60,
           "name": "Nemesis",
           "category": "Normal",
+          "Enrolled": 0,
           "price": 90,
           "InstructorName": "David Lee",
           "image": "https://img.freepik.com/free-photo/woman-with-her-guitar_23-2147782037.jpg?size=626&ext=jpg&uid=R105814829&ga=GA1.2.294406936.1686068593&semt=ais",
           "description": "Nemesis is a popular alternative rock band that has gained immense popularity for their emotional and introspective songs. Their music resonates deeply with the youth of Bangladesh."
+     },
+     {
+          "_id": {
+               "$oid": "6488216c884411f969e04dd8"
+          },
+          "name": "Flog Music",
+          "Enrolled": {
+               "$numberInt": "1"
+          },
+          "image": "https://img.freepik.com/free-photo/young-fashionable-hipster-blues-jazz-acoustic-guitar-player-with-tattoos-his-arms-playing-melody_613910-9200.jpg?size=626&ext=jpg&ga=GA1.1.824354190.1681013433&semt=ais",
+          "role": "approved",
+          "price": {
+               "$numberInt": "100"
+          },
+          "email": "shamimhossain01617@gmail.com",
+          "InstructorName": "Shamim Hossain",
+          "seats": {
+               "$numberInt": "4"
+          },
+          "description": "If you are referring to \"Bangla\" music, it is a term used to describe music from Bangladesh, which is known for its rich cultural heritage and diverse musical styles. Bangla music encompasses various genres, including folk, classical, modern, and film music. It often features lyrics in Bengali, the official language of Bangladesh.",
+          "category": "Normal"
      }
 ]

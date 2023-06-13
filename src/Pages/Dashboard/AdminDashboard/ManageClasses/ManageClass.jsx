@@ -14,7 +14,7 @@ const ManageClass = () => {
      const { data, refetch } = useQuery({
           queryKey: ['classes'],
           queryFn: async () => {
-               const result = await axiosSecure.get('http://localhost:5000/classes')
+               const result = await axiosSecure.get('https://music-school-server.vercel.app/classes')
                return result.data;
           }
      })

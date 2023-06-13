@@ -6,7 +6,7 @@ import Login from "../../UserAccount/Login/Login";
 import Instructors from "../../Pages/Instructors/Instructors/Instructors";
 import Classes from "../../Pages/Classes/Classes/Classes";
 import AdminDashboard from "../../Pages/Dashboard/AdminDashboard/AdminDashboard";
-import UserDashboard from "../../Pages/Dashboard/UserDashboard/UserDashboard";
+
 import Dashboard from "../../Layout/Dashboard/Dashboard";
 import PriveteRoute from "../PrivetRoute/PriveteRoute";
 import SelectClass from "../../Pages/Dashboard/UserDashboard/SelectClasses/SelectClass";
@@ -18,6 +18,10 @@ import RouteAddmin from "../AddminRoutes/AddminRoute";
 import InstructorClasses from "../../Pages/Dashboard/InstactorDashboard/InstructorClasses/InstructorClasses";
 import Myclass from "../../Pages/Dashboard/InstactorDashboard/myClass/Myclass";
 import Errorpage from "../../Hooks/ErrorPage/Errorpage";
+import InstactorHome from "../../Pages/Dashboard/InstactorDashboard/InstactorHome/InstactorHome";
+import UserHome from "../../Pages/Dashboard/UserDashboard/UserHome/UserHome";
+import InstructorRoute from "../InstructorRoute/InstructorRoute";
+
 
 
 const Route = createBrowserRouter([
@@ -57,10 +61,10 @@ const Route = createBrowserRouter([
 
                   {
                         path: 'userDashboard',
-                        element: <PriveteRoute> <UserDashboard></UserDashboard></PriveteRoute>
+                        element: <PriveteRoute> <UserHome></UserHome></PriveteRoute>
                   },
                   {
-                        path: 'adminDashboard',
+                        path: 'admindashboard',
                         element: <AdminDashboard></AdminDashboard>
                   },
                   {
@@ -77,20 +81,29 @@ const Route = createBrowserRouter([
                   },
                   {
                         path: 'manageusers',
-                        element: <PriveteRoute> <ManageUsers></ManageUsers> </PriveteRoute>
+                        element: <RouteAddmin> <ManageUsers></ManageUsers> </RouteAddmin>
                   },
                   {
                         path: 'addclasses',
-                        element: <PriveteRoute> <InstructorClasses></InstructorClasses> </PriveteRoute>
+                        element: <InstructorRoute> <InstructorClasses></InstructorClasses> </InstructorRoute>
+                  },
+                  {
+                        path: 'insreuctordashboard',
+                        element: <InstructorRoute> <InstactorHome></InstactorHome> </InstructorRoute>
+                  },
+                  {
+                        path: 'userdashboard',
+                        element: <PriveteRoute> <UserHome></UserHome> </PriveteRoute>
                   },
                   {
                         path: 'myclass',
-                        element: <PriveteRoute> <Myclass></Myclass> </PriveteRoute>
+                        element: <InstructorRoute> <Myclass></Myclass> </InstructorRoute>
                   },
+                
                   {
                         path: 'payment/:id',
                         element: <PriveteRoute> <Payment></Payment></PriveteRoute>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/payment/${params.id}`)
+                        loader: ({ params }) => fetch(`https://music-school-server.vercel.app/payment/${params.id}`)
                   }
 
 

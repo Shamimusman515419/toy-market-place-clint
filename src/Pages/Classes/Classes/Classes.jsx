@@ -8,10 +8,13 @@ const Classes = () => {
      const { data } = useQuery({
           queryKey: ["classes"],
           queryFn: async () => {
-               const res = await fetch('http://localhost:5000/classes');
+               const res = await fetch('https://music-school-server.vercel.app/classes');
                return res.json();
           }
      })
+
+
+const approvedData=data?.filter(item=> item.role ==="approved");
 
      return (
           <div className=" mt-[100px]">
@@ -19,9 +22,9 @@ const Classes = () => {
                     <SelectTitle subtitle=" Dedication to Teaching" HadersTitle=" All Classes "></SelectTitle>
                </div>
 
-               <div className=" grid md:grid-cols-3 gap-4 items-center justify-center">
+               <div className=" grid md:grid-cols-3 gap-4 justify-center">
                     {
-                         data?.map((item, index) => <ClassesCard key={index} card={item}></ClassesCard>)
+                         approvedData?.map((item) => <ClassesCard key={item._id} card={item}></ClassesCard>)
                     }
                </div>
           </div>

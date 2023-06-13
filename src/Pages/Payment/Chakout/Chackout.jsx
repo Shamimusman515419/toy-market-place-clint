@@ -5,10 +5,23 @@ import { AuthContact } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import useCard from "../../../Hooks/useCard/useCard";
+import { useQuery } from "@tanstack/react-query";
 
 
-const Chackout = ({ price, id,classData }) => {
+const Chackout = ({ classData }) => {
      const { user } = useContext(AuthContact);
+     const { data: classes } = useQuery({
+          queryKey: ["classes"],
+          queryFn: async () => {
+               const res = await fetch('https://music-school-server.vercel.app/classes');
+               return res.json();
+          }
+     })
+
+     const { price, _id } = classData;
+
+     const classesData = classes?.find(item => item._id == classData.id);
+
      const [data, refetch] = useCard();
      const Navigete = useNavigate();
      const stripe = useStripe();
@@ -16,7 +29,12 @@ const Chackout = ({ price, id,classData }) => {
      const [axiosSecure] = useAxiosSecure();
      const [CardError, setCardError] = useState('')
 
+  const UpdateClasses= {seats: classData?.seats -1, Enrolled: classData.Enrolled + 1};
+
+
+
      const [clientSecret, setClientSecret] = useState('');
+
      useEffect(() => {
           if (price > 0) {
                axiosSecure.post('/create-payment-intent', { price })
@@ -26,6 +44,7 @@ const Chackout = ({ price, id,classData }) => {
                     })
           }
      }, [price, axiosSecure])
+
 
 
      const handleSubmit = async (event) => {
@@ -88,15 +107,20 @@ const Chackout = ({ price, id,classData }) => {
 
                }
 
-               axiosSecure.post('/payment', payment )
+               axiosSecure.post('/payment', payment)
                     .then(result => {
                          console.log(result);
                          if (result.data.insertedId) {
 
-                              axiosSecure.delete(`/payment/${id}`)
+                              axiosSecure.put(`classes/${classesData._id}`,UpdateClasses).then(data => {
+                                   console.log(data);
+                              })
+
+                              axiosSecure.delete(`/payment/${classData._id}`)
                                    .then(data => {
                                         if (data.data) {
                                              refetch();
+                                             Navigete('/dashboard/userDashboard')
                                              Swal.fire({
                                                   position: 'mid',
                                                   icon: 'success',
@@ -142,7 +166,7 @@ const Chackout = ({ price, id,classData }) => {
                          Pay
                     </button>
                </form>
-
+                  <p className=" text-xl font-medium text-red-500"> {CardError} </p>
           </div>
      );
 };

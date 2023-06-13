@@ -16,7 +16,7 @@ const SocalLogin = () => {
                 if(result.user){
                     const user=result.user;
                     const data= {email:user.email, name:user.displayName}
-                    axios.post('http://localhost:5000/users', data)
+                    axios.post('https://music-school-server.vercel.app/users', data)
                     .then(result => {
                          if (result.data.insertedId) {
                               Swal.fire({

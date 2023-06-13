@@ -10,12 +10,16 @@ const PaymentHistroy = () => {
      const { data } = useQuery({
           queryKey: ['paymentHistory'],
           queryFn: async () => {
-               const result = axiosSecure.get(`http://localhost:5000/paymentHistory?email=${user.email}`);
+               const result = axiosSecure.get(`https://music-school-server.vercel.app/paymentHistory?email=${user.email}`);
                return (await result).data;
           }
      })
 
-     console.log(data);
+     const newDate = data?.sort(function (a, b) {
+          return new Date(a.date) - new Date(b.date);
+     });
+
+
      return (
           <div>
                <h1> payment history</h1>
@@ -35,7 +39,7 @@ const PaymentHistroy = () => {
                                    </thead>
                                    <tbody className="bg-white">
                                         {
-                                             data?.map(item => 
+                                             newDate?.map(item =>
                                                   <tr key={item._id} className="text-gray-700">
                                                        <td className="px-4 py-3 border">
                                                             <div className="flex items-center text-sm">
@@ -45,7 +49,7 @@ const PaymentHistroy = () => {
                                                                  </div>
                                                                  <div>
                                                                       <p className="font-semibold">{item.name}</p>
-                                                                    
+
                                                                  </div>
                                                             </div>
                                                        </td>
@@ -54,9 +58,9 @@ const PaymentHistroy = () => {
                                                             <span className="px-2 py-1 font-semibold leading-tight text-green-700 bg-[#d5957841] rounded-sm"> {item.email} </span>
                                                        </td>
                                                        <td className="px-4 py-3 border text-sm">
-                                                       {
-                                                             moment(item.date).format("dddd, MMMM Do YYYY, h:mm a")
-                                                       }
+                                                            {
+                                                                 moment(item.date).format("dddd, MMMM Do YYYY, h:mm a")
+                                                            }
                                                        </td>
                                                   </tr>
                                              )

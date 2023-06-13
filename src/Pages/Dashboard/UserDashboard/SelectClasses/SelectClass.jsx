@@ -12,7 +12,7 @@ import useCard from "../../../../Hooks/useCard/useCard";
 
 const SelectClass = () => {
   const  [data,refetch]= useCard()
-
+console.log(data);
      const total = data?.reduce((sum, item) => sum + item.price, 0)
      const token = localStorage.getItem('access-token')
      const handleDelete = (id) => {
@@ -27,7 +27,7 @@ const SelectClass = () => {
                confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
                if (result.isConfirmed) {
-                    axios.delete(`http://localhost:5000/cards/${id}`,{
+                    axios.delete(`https://music-school-server.vercel.app/cards/${id}`,{
                          headers:{
                               authorization: ` bearer ${token}`
                             }

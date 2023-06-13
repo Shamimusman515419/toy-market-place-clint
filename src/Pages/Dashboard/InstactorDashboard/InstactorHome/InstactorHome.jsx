@@ -1,33 +1,35 @@
-import { useQuery } from "@tanstack/react-query";
-import SelectTitle from "../../../Hooks/SelectTitle/SelectTitle";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure/useAxiosSecure";
 import { FaBook, FaChessKing, FaUsers, FaWallet } from "react-icons/fa";
+import SelectTitle from "../../../../Hooks/SelectTitle/SelectTitle";
+import { useContext } from "react";
+import { AuthContact } from "../../../AuthProvider/AuthProvider";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
-const AdminDashboardAdmin = () => {
-     const [axiosSecure] = useAxiosSecure()
-     const { data: state = [], isLoading } = useQuery({
-          queryKey: ['adminstate'],
+const InstactorHome = () => {
+     const { user } = useContext(AuthContact);
+     const [axiosSecure] = useAxiosSecure();
+  
+     const { data } = useQuery({
+          queryKey: ['myclass', user?.email],
           queryFn: async () => {
-               const res = await axiosSecure.get('/adminstate');
-               return res.data;
+               const result = await axiosSecure.get(`/classes/${user?.email}`);
+               return result.data;
           }
      })
+const totalPrice= data?.reduce((sum,item)=> sum + item.price , 0)
+const totalStudent= data?.reduce((sum,item)=> sum + item.Enrolled , 0)
+const totalSeats= data?.reduce((sum,item)=> sum + item.seats , 0)
+      
+console.log(data);
 
-     console.log(state);
-     const users = state.users;
-     const classes = state.classes;
-     const instructor = state.instructor;
-     const payments = state.payments;
 
-  const total= payments?.reduce((sum,item)=> sum + item.price ,0)
 
-     return (
-          <div className=" m-2">
-
-               <div>
-                    <SelectTitle subtitle="Dedication to Teaching" HadersTitle="Admin Dashboard"></SelectTitle>
-               </div>
+return (
+          <div>
+             <div>
+                    <SelectTitle subtitle="Dedication to Teaching" HadersTitle="Instructor Dashboard"></SelectTitle>
+               </div> 
 
                <div className="  grid md:grid-cols-3 gap-6 ">
                     <div className=" bg-[#de20be36]  p-5 rounded flex gap-5 items-center  justify-around ">
@@ -35,7 +37,7 @@ const AdminDashboardAdmin = () => {
                               <FaChessKing className=" text-6xl text-[#a817d0] "></FaChessKing>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Instructor: {instructor ? instructor : 0}</h1>
+                              <h1 className=" text-3xl font-bold"> Seats: {totalSeats ? totalSeats : 0}</h1>
 
                          </div>
                     </div>
@@ -44,7 +46,7 @@ const AdminDashboardAdmin = () => {
                               <FaBook className=" text-6xl text-[#a817d0] "></FaBook>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Classes: {classes ? classes : 0}</h1>
+                              <h1 className=" text-3xl font-bold"> Classes: {data?.length ? data?.length : 0}</h1>
 
                          </div>
                     </div>
@@ -53,7 +55,7 @@ const AdminDashboardAdmin = () => {
                               <FaUsers className=" text-6xl text-[#a817d0] "></FaUsers>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Users: {users ? users : 0}</h1>
+                              <h1 className=" text-3xl font-bold"> Student: {totalStudent ? totalStudent : 0}</h1>
 
                          </div>
                     </div>
@@ -62,16 +64,18 @@ const AdminDashboardAdmin = () => {
                               <FaWallet className=" text-6xl text-[#a817d0] "></FaWallet>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Total Price: {total ? total : 0}</h1>
+                              <h1 className=" text-3xl font-bold"> Total Price: {totalPrice ? totalPrice : 0}</h1>
 
                          </div>
                     </div>
 
                  
                </div>
+
+
+                
           </div>
      );
-
 };
 
-export default AdminDashboardAdmin;
+export default InstactorHome;

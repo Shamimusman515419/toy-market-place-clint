@@ -48,12 +48,10 @@ const ManageUsers = () => {
      }
 
      const handleDelete = (item) => {
-          fetch(`http://localhost:5000/users/${item}`, {
-               method: "DELETE"
-          })
-               .then(res => res.json())
-               .then(data => {
-                    if (data.deletedCount) {
+
+          axiosSecure.delete(`/users/${item}`)
+             .then(data => {
+                    if (data.data.deletedCount) {
                          refetch();
                          Swal.fire({
                               position: 'mid',

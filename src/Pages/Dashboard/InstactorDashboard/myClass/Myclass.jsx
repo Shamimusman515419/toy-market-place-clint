@@ -17,19 +17,9 @@ const Myclass = () => {
                return result.data;
           }
      })
-     const { data: orderState, refetch } = useQuery({
-          queryKey: ['/order-stats',],
-          queryFn: async () => {
-               const result = await axiosSecure.get(`/order-stats`);
-               return result.data;
-          }
-     })
+     
     
-     console.log(orderState);
-     console.log(data);
-     const countNumber= orderState?.filter(item=> item.id == "6486022212f29561a2dc1d51" );
-     console.log(countNumber);
- 
+   
    
 
      const handleUpdate=(item)=>{
@@ -63,16 +53,16 @@ const Myclass = () => {
                                         {
                                              data?.map((item, index) =>
                                                   <tr key={item._id}>
-                                                       <th>{index + 1}</th>
-                                                       <td> <img className=" h-[60px] w-[60px] rounded-xl" src={item.image} alt="" /></td>
-                                                       <td>{item.name}</td>
-                                                       <td>0</td>
+                                                       <th className=" text-base font-medium">{index + 1}</th>
+                                                       <td > <img className=" h-[60px] w-[60px] rounded-xl" src={item.image} alt="" /></td>
+                                                       <td  className=" text-base font-medium">{item.name}</td>
+                                                       <td  className=" text-base font-medium">{item.Enrolled}</td>
 
                                                        <td>
-                                                        <p> {item.role} </p>
+                                                        <p  className=" text-base font-medium"> {item.role} </p>
                                                        </td>
                                                        <td>
-                                                        <p> {"null"} </p>
+                                                        <p  className=" text-base font-medium"> {"null"} </p>
                                                        </td>
                                                        <td>
                                                             <button onClick={() => handleUpdate(item._id)} className="  bg-[#375cd67c]  text-2xl  p-2 rounded"><FaEdit></FaEdit></button>

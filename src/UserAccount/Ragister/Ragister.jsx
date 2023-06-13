@@ -11,10 +11,21 @@ import Swal from "sweetalert2";
 
 
 const Ragister = () => {
+
      const [machEorro, setMachError] = useState('')
      const { CreateUser } = useContext(AuthContact);
+     const [showpass,setShowpass]=useState('password')
      const navigete=useNavigate()
      const { register, handleSubmit, reset, formState: { errors } } = useForm();
+     const handlechage=(event)=>{
+           if(event.target.checked){
+               setShowpass("text")
+           }else{
+               setShowpass("password")
+                
+           }
+     }
+     
      const onSubmit = data => {
           const auth = getAuth(app);
           const name = data.fistName + " " + data.lastName;
@@ -26,7 +37,7 @@ const Ragister = () => {
                          displayName: name, photoURL: data.photo
                     }).then((result) => {
                          const user = { email: data.email, name}
-                         axios.post('http://localhost:5000/users', user)
+                         axios.post('https://music-school-server.vercel.app/users', user)
                               .then(result => {
                                    if (result.data.insertedId) {
                                         Swal.fire({
@@ -103,7 +114,7 @@ const Ragister = () => {
                                         minLength: 6,
                                         maxLength: 20,
                                         pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                   })} name='password' className=' mt-2  border-2 p-2   border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="password" placeholder=" password" id="" />
+                                   })} name='password' className=' mt-2  border-2 p-2   border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type={`${showpass}`} placeholder=" password" id="" />
 
 
                               </div>
@@ -117,9 +128,12 @@ const Ragister = () => {
                                    <label className=' text-xl font-bold my-2  font-color' htmlFor="Email">Confirm Password:</label>
                                    <input  {...register("ConfirmPassword", {
 
-                                   })} name='ConfirmPassword' className=' mt-2  border-2 p-2   border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type="password" placeholder=" password" id="" />
+                                   })} name='ConfirmPassword' className=' mt-2  border-2 p-2   border-[#0000007d] rounded-md  focus:outline-blue-500 block w-full' type={`${showpass}`} placeholder=" password" id="" />
 
 
+                              </div>
+                              <div>
+                                  <input onChange={handlechage} type="checkbox" name="checkbox" id="" /> <span> show password</span>
                               </div>
                               {machEorro ? <p className="  text-red-500"> {machEorro}</p> : ""}
                               <label className="label">

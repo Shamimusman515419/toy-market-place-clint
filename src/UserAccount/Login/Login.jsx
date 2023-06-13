@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
@@ -9,17 +9,27 @@ import Swal from "sweetalert2";
 
 const Login = () => {
      const { Login } = useContext(AuthContact);
-     const location=useLocation();
-     const navigate=useNavigate();
+     const location = useLocation();
+     const [showpass, setShowpass] = useState('password')
+     const navigate = useNavigate();
      let from = location.state?.from?.pathname || "/";
      const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+     const handlechage = (event) => {
+          if (event.target.checked) {
+               setShowpass("text")
+          } else {
+               setShowpass("password")
+
+          }
+     }
      const onSubmit = (data) => {
 
           Login(data.email, data.password).then(result => {
                Swal.fire('User login Successfully')
                reset()
                navigate(from)
-               
+
           }).catch(error => {
                Swal.fire({
                     icon: 'error',
@@ -57,12 +67,14 @@ const Login = () => {
                                                   <svg className="absolute ml-3" viewBox="0 0 24 24" width="24">
                                                        <path d="m18.75 9h-.75v-3c0-3.309-2.691-6-6-6s-6 2.691-6 6v3h-.75c-1.24 0-2.25 1.009-2.25 2.25v10.5c0 1.241 1.01 2.25 2.25 2.25h13.5c1.24 0 2.25-1.009 2.25-2.25v-10.5c0-1.241-1.01-2.25-2.25-2.25zm-10.75-3c0-2.206 1.794-4 4-4s4 1.794 4 4v3h-8zm5 10.722v2.278c0 .552-.447 1-1 1s-1-.448-1-1v-2.278c-.595-.347-1-.985-1-1.722 0-1.103.897-2 2-2s2 .897 2 2c0 .737-.405 1.375-1 1.722z" />
                                                   </svg>
-                                                  <input {...register('password', { required: true })} aria-invalid={errors.password ? "true" : "false"} type="password" id="password" className="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Password" />
+                                                  <input {...register('password', { required: true })} aria-invalid={errors.password ? "true" : "false"} type={`${showpass}`} id="password" className="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Password" />
 
                                              </div>
                                              {errors.password && <span className="text-red-500">password is required</span>}
                                         </div>
-
+                                        <div>
+                                             <input onChange={handlechage} type="checkbox" name="checkbox" id="" /> <span> show password</span>
+                                        </div>
                                         <label className="label">
                                              <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                         </label>
@@ -76,7 +88,7 @@ const Login = () => {
                                         <div className="divider">OR</div>
                                         <SocalLogin></SocalLogin>
                                    </form>
-                                  
+
                               </div>
                          </div>
                     </div>

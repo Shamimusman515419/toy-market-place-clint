@@ -10,7 +10,7 @@ const Popularcard = ({ card }) => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
-          Click Me
+        
        
           <div>
                <div className="card w-96 bg-base-100 shadow">

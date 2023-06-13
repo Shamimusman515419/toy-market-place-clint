@@ -4,22 +4,24 @@ import { useContext } from "react";
 import { AuthContact } from "../../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const InstructorClasses = () => {
 const [axiosSecure]=useAxiosSecure();
      const { user } = useContext(AuthContact);
-
+const navigete=useNavigate();
      const { register, handleSubmit, formState: { errors } } = useForm();
      const onSubmit = data => {
 
           const { name, image, price, email,InstructorName, seats, description, category } = data
-          const Classes = { name, image, role: "pending", price : parseFloat(price) ,email, InstructorName, seats: parseFloat(seats), description, category };
+          const Classes = { name, Enrolled: 0, image, role: "pending", price : parseFloat(price) ,email, InstructorName, seats: parseFloat(seats), description, category };
 
           axiosSecure.post('/classes', Classes)
           .then(data=>{
                 console.log(data);
                 if(data.data.insertedId){
+                    navigete('/dashboard/myclass')
                     Swal.fire({
                          position: 'top-end',
                          icon: 'success',

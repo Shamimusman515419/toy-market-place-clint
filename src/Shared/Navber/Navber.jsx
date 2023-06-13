@@ -3,9 +3,16 @@ import { Link } from "react-router-dom";
 import { AuthContact } from "../../Pages/AuthProvider/AuthProvider";
 import { FaAlignJustify } from "react-icons/fa";
 import UseToggle from "../../Hooks/useToggle/usetoggle";
+import useAdmin from "../../Hooks/Admin/useAdmin";
+import useInstractor from "../../Hooks/useInstruct/useInstractor";
 
 
 const Navber = () => {
+     // const [Admin, AdminLoading] = useAdmin();
+     // const [Instructor, isLoading] = useInstractor();
+     const Admin =true
+     const Instructor =true
+
      const { LogOut } = useContext(AuthContact)
      const { user } = useContext(AuthContact);
      const [acctive, setAcctive] = useState(false)
@@ -16,16 +23,16 @@ const Navber = () => {
                console.log(error);
           })
      }
-
+  
      const NavOptions = <>
           <li> <Link to={'/'}>Home</Link> </li>
           <li> <Link to={'/instructors'}>Instructors </Link> </li>
           <li> <Link to={'/classes'}>Classes</Link> </li>
-         
+
           {
-               user ? <li> <Link to={'/dashboard/selectClass'}>Dashboard</Link> </li> : ""
+               user ? <li> <Link to={`/dashboard/${Admin==true?"admindashboard":Instructor==true?"insreuctordashboard":"userdashboard"}`}>Dashboard</Link> </li> : ""
           }
-         <li>  <UseToggle></UseToggle></li>
+          <li>  <UseToggle></UseToggle></li>
 
      </>
 
@@ -57,7 +64,7 @@ const Navber = () => {
                                         <div className="  relative">
                                              <div onClick={() => setAcctive(!acctive)} className=" relative flex gap-1 pl-3 pr-1 py-1 cursor-pointer   items-center justify-center border-2 rounded-2xl">
                                                   <FaAlignJustify className=" text-lg"></FaAlignJustify>
-                                                  <img className=" border-2 border-[#D59578] h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
+                                                  <img  className=" border-2 border-[#D59578] h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
                                              </div>
                                              <div className={` ${acctive ? '  block' : "  hidden"} absolute   h-[200px] px-12  top-10 bg-[#D59578] p-4 rounded   right-1 `}>
                                                   <button onClick={handleLogOut} className={`  bg-[#d31e9dc6]  px-4 py-1 rounded-md text-start text-white text-2xl font-semibold`}> Logout</button>
