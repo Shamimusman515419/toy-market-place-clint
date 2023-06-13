@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import Swal from "sweetalert2";
 import { motion } from 'framer-motion';
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
+import { Link } from "react-router-dom";
 const ManageClass = () => {
 
 
@@ -85,6 +86,7 @@ const ManageClass = () => {
                                         <p className=" text-2xl font-semibold">Seats: {item.seats}</p>
                                         <p className=" text-2xl font-semibold">Category: {item.category}</p>
                                         <p className=" text-2xl font-semibold">State: {item.role ? item.role : 'pending'}</p>
+                                        <Link className=" text-blue-600 text-2xl font-semibold" to={`/dashboard/feedback/${item._id}`}> Feedback</Link>
                                    </div>
                                    <div className=" mt-9 flex gap-4  items-start justify-center ">
                                         <button className=" bg-[#D59578] rounded-md text-white py-1 px-3 text-xl"> Pending </button>

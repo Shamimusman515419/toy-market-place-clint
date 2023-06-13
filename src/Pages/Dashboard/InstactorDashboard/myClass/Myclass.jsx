@@ -62,7 +62,7 @@ const Myclass = () => {
                                                         <p  className=" text-base font-medium"> {item.role} </p>
                                                        </td>
                                                        <td>
-                                                        <p  className=" text-base font-medium"> {"null"} </p>
+                                                        <p  className=" text-base font-medium"> { item?.feedback ? item?.feedback : "nul"} </p>
                                                        </td>
                                                        <td>
                                                             <button onClick={() => handleUpdate(item._id)} className="  bg-[#375cd67c]  text-2xl  p-2 rounded"><FaEdit></FaEdit></button>

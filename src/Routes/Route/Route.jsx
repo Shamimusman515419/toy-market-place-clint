@@ -21,6 +21,7 @@ import Errorpage from "../../Hooks/ErrorPage/Errorpage";
 import InstactorHome from "../../Pages/Dashboard/InstactorDashboard/InstactorHome/InstactorHome";
 import UserHome from "../../Pages/Dashboard/UserDashboard/UserHome/UserHome";
 import InstructorRoute from "../InstructorRoute/InstructorRoute";
+import Feedback from "../../Pages/Dashboard/AdminDashboard/Feedback/Feedback";
 
 
 
@@ -94,6 +95,12 @@ const Route = createBrowserRouter([
                   {
                         path: 'userdashboard',
                         element: <PriveteRoute> <UserHome></UserHome> </PriveteRoute>
+                  },
+                  {
+                        path:'feedback/:id',
+                        element: <PriveteRoute> <Feedback></Feedback> </PriveteRoute>,
+                        loader:({params})=> fetch(`http://localhost:5000/classes/feedback/${params.id}`)
+                        
                   },
                   {
                         path: 'myclass',

@@ -30,7 +30,7 @@ const Navber = () => {
           <li> <Link to={'/classes'}>Classes</Link> </li>
 
           {
-               user ? <li> <Link to={`/dashboard/${Admin==true?"admindashboard":Instructor==true?"insreuctordashboard":"userdashboard"}`}>Dashboard</Link> </li> : ""
+          user ? <li> <Link to={`/dashboard/${Admin==true?"admindashboard":Instructor==true?"insreuctordashboard":"userdashboard"}`}>Dashboard</Link> </li> : ""
           }
           <li>  <UseToggle></UseToggle></li>
 

@@ -6,7 +6,7 @@ import { AuthContact } from '../../Pages/AuthProvider/AuthProvider';
 
 
 const axiosSecure = axios.create({
-     baseURL: 'https://music-school-server.vercel.app',
+     baseURL: 'http://localhost:5000',
 });
 
 const useAxiosSecure = () => {

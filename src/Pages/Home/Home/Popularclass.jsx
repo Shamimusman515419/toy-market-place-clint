@@ -34,8 +34,8 @@ const Popularclass = () => {
                <div>
   
                      <Swiper
-                         slidesPerView={4}
-                         spaceBetween={30}
+                         slidesPerView={3}
+                         spaceBetween={10}
                          pagination={{
                               clickable: true,
                          }}
@@ -46,7 +46,7 @@ const Popularclass = () => {
                               popular?.map((item, index) => <SwiperSlide key={index}>
                                    <div className="  relative    ">
                                         <img className="  relative  h-96 w-full" src={item.image} alt="" />
-                                         <h1 className="  absolute bottom-2  left-0  bg-[#d59578d3] px-2 py-1 text-white    text-2xl font-semibold"> {item?.name} </h1>
+                                         <h1 className=" hidden  md:block  absolute bottom-2  left-0  bg-[#d59578d3] px-2 py-1 text-white    text-2xl font-semibold"> {item?.name} </h1>
                                    </div>
 
                               </SwiperSlide>)
