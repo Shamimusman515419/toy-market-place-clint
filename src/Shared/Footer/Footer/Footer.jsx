@@ -6,12 +6,12 @@ const Footer = () => {
           <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100">
           <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                <div className="lg:w-1/3">
-                    <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
-                         <div className="flex items-center justify-center w-24 h-24 rounded-full dark:bg-violet-400">
-                              <img src={logo} alt="" />
+                    <div className=' flex gap-2 items-center justify-start'>
+                         <div className=" w-20 h-20 rounded-full overflow-hidden ">
+                              <img className='  w-20 h-20 rounded-full' src={logo} alt="" />
                          </div>
                          <span className="self-center text-2xl font-semibold">Music School</span>
-                    </a>
+                    </div>
                </div>
                <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">

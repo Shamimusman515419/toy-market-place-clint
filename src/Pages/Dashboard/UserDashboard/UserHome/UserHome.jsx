@@ -31,38 +31,38 @@ const UserHome = () => {
                <div className="  grid md:grid-cols-3 gap-6 ">
                     <div className=" bg-[#de20be36]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaBook className=" text-6xl text-[#a817d0] "></FaBook>
+                              <FaBook className=" text-3xl text-[#a817d0] "></FaBook>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Classes: {data?.length ?  data?.length : 0}</h1>
+                          <h1 className=" text-black  text-3xl font-bold"> Classes: {data?.length ?  data?.length : 0}</h1>
 
                          </div>
                     </div>
                    
                     <div className=" bg-[#20de4956]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaPaypal className=" text-6xl text-[#a817d0] "></FaPaypal>
+                              <FaPaypal className=" text-3xl text-[#a817d0] "></FaPaypal>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Payment: {payment?.length ? payment?.length : 0}</h1>
+                              <h1 className="text-black   text-3xl font-bold"> Payment: {payment?.length ? payment?.length : 0}</h1>
 
                          </div>
                     </div>
                     <div className=" bg-[#ded52056]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaWallet className=" text-6xl text-[#a817d0] "></FaWallet>
+                              <FaWallet className=" text-3xl text-[#a817d0] "></FaWallet>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Payment Price: {totalpayment ? totalpayment : 0}</h1>
+                              <h1 className=" text-3xl text-black  font-bold"> Payment Price: {totalpayment ? totalpayment : 0}</h1>
 
                          </div>
                     </div>
                     <div className=" bg-[#ded52056]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaWallet className=" text-6xl text-[#a817d0] "></FaWallet>
+                              <FaWallet className=" text-3xl text-[#a817d0] "></FaWallet>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Card Price: {total ? total : 0}</h1>
+                              <h1 className=" text-3xl text-black  font-bold"> Card Price: {total ? total : 0}</h1>
 
                          </div>
                     </div>

@@ -8,9 +8,7 @@ const InstructorCard = ({card}) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <p>This is a new animation example using Framer Motion!</p>
-    
-          <div className=" m-1  rounded-xl   shadow overflow-hidden  ">
+    <div className=" m-1  rounded-xl   shadow overflow-hidden  ">
                 <div className=" md:grid grid-cols-2 gap-5 items-center justify-center ">
                     <div className=" w-full overflow-hidden  h-80">
                          <img className=" w-full h-full" src={img} alt="" />

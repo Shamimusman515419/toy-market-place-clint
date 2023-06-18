@@ -8,7 +8,7 @@ const Popularinstrctor = () => {
      const { data } = useQuery({
           queryKey: ["popularInstacort"],
           queryFn: async () => {
-               const res = await fetch('Instrator.json');
+               const res = await fetch('https://music-school-server.vercel.app/instractor');
                return res.json();
           }
      })

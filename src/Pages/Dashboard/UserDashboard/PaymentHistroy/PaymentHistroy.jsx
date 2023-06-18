@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContact } from "../../../AuthProvider/AuthProvider";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure/useAxiosSecure";
 import moment from "moment/moment";
+import SelectTitle from "../../../../Hooks/SelectTitle/SelectTitle";
 
 const PaymentHistroy = () => {
      const [axiosSecure] = useAxiosSecure()
@@ -22,7 +23,7 @@ const PaymentHistroy = () => {
 
      return (
           <div>
-               <h1> payment history</h1>
+               <SelectTitle subtitle={"Dedication to Teaching"} HadersTitle="Payment History"></SelectTitle>
 
 
                <section className="container mx-auto p-6 font-mono">
@@ -30,11 +31,11 @@ const PaymentHistroy = () => {
                          <div className="w-full overflow-x-auto">
                               <table className="w-full">
                                    <thead>
-                                        <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                                             <th className="px-4 py-3">Name</th>
-                                             <th className="px-4 py-3">Price</th>
-                                             <th className="px-4 py-3">Email</th>
-                                             <th className="px-4 py-3">Date</th>
+                                        <tr className="text-md font-semibold tracking-wide text-left  bg-gray-100 uppercase border-b border-gray-600">
+                                             <th className="px-4  text-lg text-black py-3">Name</th>
+                                             <th className="px-4 text-lg text-black py-3">Price</th>
+                                             <th className="px-4 text-lg text-black py-3">Email</th>
+                                             <th className="px-4 text-lg text-black py-3">Date</th>
                                         </tr>
                                    </thead>
                                    <tbody className="bg-white">

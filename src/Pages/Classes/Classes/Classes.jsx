@@ -5,14 +5,14 @@ import ClassesCard from "../ClassesCard/ClassesCard";
 
 const Classes = () => {
 
-     const { data } = useQuery({
+ const { data } = useQuery({
           queryKey: ["classes"],
           queryFn: async () => {
                const res = await fetch('https://music-school-server.vercel.app/classes');
                return res.json();
           }
-     })
-
+   })
+console.log(data);
 
 const approvedData=data?.filter(item=> item.role ==="approved");
 

@@ -34,37 +34,37 @@ return (
                <div className="  grid md:grid-cols-3 gap-6 ">
                     <div className=" bg-[#de20be36]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaChessKing className=" text-6xl text-[#a817d0] "></FaChessKing>
+                              <FaChessKing className=" text-3xl text-[#a817d0] "></FaChessKing>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Seats: {totalSeats ? totalSeats : 0}</h1>
+                              <h1 className=" text-3xl font-bold text-black "> Seats: {totalSeats ? totalSeats : 0}</h1>
 
                          </div>
                     </div>
                     <div className=" bg-[#2046de40]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaBook className=" text-6xl text-[#a817d0] "></FaBook>
+                              <FaBook className=" text-3xl text-[#a817d0] "></FaBook>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Classes: {data?.length ? data?.length : 0}</h1>
+                              <h1 className=" text-3xl font-bold text-black "> Classes: {data?.length ? data?.length : 0}</h1>
 
                          </div>
                     </div>
                     <div className=" bg-[#20de4956]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaUsers className=" text-6xl text-[#a817d0] "></FaUsers>
+                              <FaUsers className=" text-3xl text-[#a817d0] "></FaUsers>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Student: {totalStudent ? totalStudent : 0}</h1>
+                              <h1 className=" text-3xl font-bold text-black "> Student: {totalStudent ? totalStudent : 0}</h1>
 
                          </div>
                     </div>
                     <div className=" bg-[#ded52056]  p-5 rounded flex gap-5 items-center  justify-around ">
                          <div>
-                              <FaWallet className=" text-6xl text-[#a817d0] "></FaWallet>
+                              <FaWallet className=" text-3xl text-[#a817d0] "></FaWallet>
                          </div>
                          <div>
-                              <h1 className=" text-3xl font-bold"> Total Price: {totalPrice ? totalPrice : 0}</h1>
+                              <h1 className=" text-3xl font-bold text-black "> Total Price: {totalPrice ? totalPrice : 0}</h1>
 
                          </div>
                     </div>

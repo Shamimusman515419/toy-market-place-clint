@@ -56,8 +56,8 @@ console.log(data);
 
                <div className="  my-7 py-1 px-4 md:flex  justify-around items-center">
 
-                    <h1 className=" text-2xl font-medium"> Total Classes : {data && data.length} </h1>
-                    <h1 className=" text-2xl font-medium">Total price : $ {total} </h1>
+                    <h1 className=" text-2xl text-black font-medium"> Total Classes : {data && data.length} </h1>
+                    <h1 className=" text-2xl text-black  font-medium">Total price : $ {total} </h1>
 
 
                </div>
@@ -68,13 +68,13 @@ console.log(data);
                               {/* head */}
                               <thead className="bg-[#D59578] ">
                                    <tr className="bg-[#D59578] ">
-                                        <th>
+                                        <th className=" px-4  text-lg text-black py-3">
                                              #
                                         </th>
-                                        <th>Image items</th>
-                                        <th>Name items</th>
-                                        <th>Price items</th>
-                                        <th>Action</th>
+                                        <th className=" px-4  text-lg text-black py-3">Image items</th>
+                                        <th className=" px-4  text-lg text-black py-3">Name items</th>
+                                        <th className=" px-4  text-lg text-black py-3">Price items</th>
+                                        <th className=" px-4  text-lg text-black py-3">Action</th>
 
                                    </tr>
                               </thead>
@@ -82,7 +82,7 @@ console.log(data);
                                    {
                                         data?.map((item, index) => (
                                              <tr key={item._id}>
-                                                  <th>
+                                                  <th className=" text-xl text-black font-semibold">
                                                        {index + 1}
                                                   </th>
                                                   <td>
@@ -93,12 +93,13 @@ console.log(data);
                                                        </div>
                                                   </td>
                                                   <td>
-                                                       <p className=" text-xl font-semibold"> {item.name}</p>
+                                                       <p className=" text-xl text-black font-semibold"> {item.name}</p>
                                                   </td>
-                                                  <td> ${item.price}</td>
-                                                  <th className=" flex gap-4 items-center justify-center">
-                                                  <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded"><FaTrashAlt></FaTrashAlt></button>
-                                                    <Link to={`/dashboard/payment/${item._id}`} className=" text-xl font-medium   text-white py-1 px-5 rounded-md bg-[#D59578] "> Pay </Link>
+                                                  <td  className=" text-xl text-black font-semibold"> ${item.price}</td>
+                                                  <th className="">
+                                                  <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded">
+                                                      <FaTrashAlt></FaTrashAlt></button>
+                                                    <Link to={`/dashboard/payment/${item._id}`} className=" mx-7 text-xl font-medium   text-white py-1 px-5 rounded-md bg-[#D59578] "> Pay </Link>
                                                   </th>
                                              </tr>
                                         ))

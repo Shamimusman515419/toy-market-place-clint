@@ -9,17 +9,18 @@ import {
  QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Container from './Hooks/Container/Container'
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <div className=' max-w-7xl m-auto '>
+    <Container>
     <QueryClientProvider client={queryClient}>
     <AuthProvider>
     <RouterProvider router={Route}></RouterProvider>
       </AuthProvider>  
       </QueryClientProvider>
-    </div>
+    </Container>
 
   </React.StrictMode>,
 )

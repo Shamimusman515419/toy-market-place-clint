@@ -13,8 +13,8 @@ const ClassesCard = ({ card }) => {
   const [axiosSecure] = useAxiosSecure();
   const location = useLocation();
   const navigate = useNavigate();
-      const [Admin] = useAdmin();
-     const [Instructor] = useInstractor();
+  const [Admin] = useAdmin();
+  const [Instructor] = useInstractor();
   const { user } = useContext(AuthContact)
   const { image, price, Enrolled, seats, name, InstructorName, description } = card;
 
@@ -30,6 +30,7 @@ const ClassesCard = ({ card }) => {
 
 
   const handleSelet = (card) => {
+    
     const { name, seats, price, _id, Enrolled, InstructorName, category, description, image } = card;
 
     const data = { name, seats, price, id: _id, Enrolled, InstructorName, category, description, image, email: user?.email }
@@ -89,7 +90,7 @@ const ClassesCard = ({ card }) => {
 
           </div>
           <p className=" left-0 text-lg absolute top-0  font-semibold text-white  bg-[#D59578] px-4 py-1 ">${price}</p>
-         
+
         </div>
 
       </motion.div>

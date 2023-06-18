@@ -16,9 +16,9 @@ import { useQuery } from "@tanstack/react-query";
 const Popularclass = () => {
 
      const { data } = useQuery({
-          queryKey: ["className"],
+          queryKey: ["classes"],
           queryFn: async () => {
-               const res = await fetch('Classes.json');
+               const res = await fetch('https://music-school-server.vercel.app/classes');
                return res.json();
           }
      })

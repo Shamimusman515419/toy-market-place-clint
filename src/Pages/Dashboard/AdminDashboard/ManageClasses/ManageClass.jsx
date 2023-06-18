@@ -73,20 +73,20 @@ const ManageClass = () => {
 
                               <div>
                                    <img className=" h-[400px] w-full" src={item.image} alt="" />
-                                   <h1 className=" text-xl font-medium my-3">
+                                   <h1 className=" text-black  text-xl font-medium my-3">
                                         Name:  {item.name} </h1>
 
                               </div>
                               <div>
                                    <div className=" space-y-3">
-                                        <h1 className=" text-3xl  font-semibold"> InstructorName:  {item.InstructorName}
+                                        <h1 className=" text-3xl text-black  font-semibold"> InstructorName:  {item.InstructorName}
                                         </h1>
-                                        <h2 className=" text-2xl  font-semibold">Email: {item.email ? item.email : "shamimusman515419@gmail.com"}</h2>
-                                        <p className=" text-2xl font-semibold">Price : ${item.price}</p>
-                                        <p className=" text-2xl font-semibold">Seats: {item.seats}</p>
-                                        <p className=" text-2xl font-semibold">Category: {item.category}</p>
-                                        <p className=" text-2xl font-semibold">State: {item.role ? item.role : 'pending'}</p>
-                                        <Link className=" text-blue-600 text-2xl font-semibold" to={`/dashboard/feedback/${item._id}`}> Feedback</Link>
+                                        <h2 className=" text-2xl text-black font-semibold">Email: {item.email ? item.email : "shamimusman515419@gmail.com"}</h2>
+                                        <p className=" text-2xl text-black  font-semibold">Price : ${item.price}</p>
+                                        <p className=" text-2xl text-black font-semibold">Seats: {item.seats}</p>
+                                        <p className=" text-2xl text-black font-semibold">Category: {item.category}</p>
+                                        <p className=" text-2xl text-black font-semibold">State: {item.role ? item.role : 'pending'}</p>
+                                        <Link className=" text-blue-600  text-2xl font-semibold" to={`/dashboard/feedback/${item._id}`}> Feedback</Link>
                                    </div>
                                    <div className=" mt-9 flex gap-4  items-start justify-center ">
                                         <button className=" bg-[#D59578] rounded-md text-white py-1 px-3 text-xl"> Pending </button>

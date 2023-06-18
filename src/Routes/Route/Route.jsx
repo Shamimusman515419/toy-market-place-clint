@@ -66,7 +66,7 @@ const Route = createBrowserRouter([
                   },
                   {
                         path: 'admindashboard',
-                        element: <AdminDashboard></AdminDashboard>
+                        element: <RouteAddmin> <AdminDashboard></AdminDashboard> </RouteAddmin> 
                   },
                   {
                         path: 'selectClass',

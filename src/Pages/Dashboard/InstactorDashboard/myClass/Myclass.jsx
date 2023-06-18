@@ -40,32 +40,32 @@ const Myclass = () => {
                                    {/* head */}
                                    <thead>
                                         <tr>
-                                            <th>#</th>
-                                             <th>Image</th>
-                                             <th>Name</th>
-                                             <th>Total Enrolled Students</th>
-                                             <th>Role</th>
-                                             <th>Feedback </th>
-                                             <th>Acton</th>
+                                            <th className=" px-4  text-lg text-black py-3">#</th>
+                                             <th className=" px-4  text-lg text-black py-3">Image</th>
+                                             <th className=" px-4  text-lg text-black py-3">Name</th>
+                                             <th className=" px-4  text-lg text-black py-3">Total Enrolled Students</th>
+                                             <th className=" px-4  text-lg text-black py-3">Role</th>
+                                             <th className=" px-4  text-lg text-black py-3">Feedback </th>
+                                             <th className=" px-4  text-lg text-black py-3">Acton</th>
                                         </tr>
                                    </thead>
                                    <tbody>
                                         {
                                              data?.map((item, index) =>
                                                   <tr key={item._id}>
-                                                       <th className=" text-base font-medium">{index + 1}</th>
+                                                       <th className=" text-base text-black font-medium">{index + 1}</th>
                                                        <td > <img className=" h-[60px] w-[60px] rounded-xl" src={item.image} alt="" /></td>
-                                                       <td  className=" text-base font-medium">{item.name}</td>
-                                                       <td  className=" text-base font-medium">{item.Enrolled}</td>
+                                                       <td  className=" text-base text-black font-medium">{item.name}</td>
+                                                       <td  className=" text-base text-black font-medium">{item.Enrolled}</td>
 
                                                        <td>
-                                                        <p  className=" text-base font-medium"> {item.role} </p>
+                                                        <p  className=" text-base text-black font-medium"> {item.role} </p>
                                                        </td>
                                                        <td>
-                                                        <p  className=" text-base font-medium"> { item?.feedback ? item?.feedback : "nul"} </p>
+                                                        <p  className=" text-base text-black font-medium"> { item?.feedback ? item?.feedback : "nul"} </p>
                                                        </td>
                                                        <td>
-                                                            <button onClick={() => handleUpdate(item._id)} className="  bg-[#375cd67c]  text-2xl  p-2 rounded"><FaEdit></FaEdit></button>
+                                                            <button onClick={() => handleUpdate(item._id)} className="  text-black  text-2xl  p-2 rounded"><FaEdit></FaEdit></button>
                                                        </td>
                                                   </tr>
                                              )

@@ -13,10 +13,10 @@ const Popularcard = ({ card }) => {
         
        
           <div>
-               <div className="card w-96 bg-base-100 shadow">
+               <div className="card   shadow">
                     <figure><img className=" h-80 w-full" src={img} alt="Shoes" /></figure>
-                    <div className="card-body">
-                         <h2 className="card-title font-bold text-3xl  font-color">{name}</h2>
+                    <div className="card-body  text-start ">
+                         <h2 className=" font-bold text-3xl  font-color">{name}</h2>
                          <p className=" font-color  text-lg font-medium"> Student : {numStudents} </p>
                           <p className=" font-color text-base"> {email} </p>
                           <Link className=" text-blue-500 underline "> learn more </Link> 

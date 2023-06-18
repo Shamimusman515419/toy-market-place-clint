@@ -78,22 +78,22 @@ const ManageUsers = () => {
                                    {/* head */}
                                    <thead>
                                         <tr>
-                                             <th>#</th>
-                                             <th>Name</th>
-                                             <th>Email</th>
-                                             <th>Role</th>
-                                             <th>Acton</th>
+                                             <th className=" px-4  text-lg text-black py-3">#</th>
+                                             <th className=" px-4  text-lg text-black py-3">Name</th>
+                                             <th className=" px-4  text-lg text-black py-3">Email</th>
+                                             <th className=" px-4  text-lg text-black py-3">Role</th>
+                                             <th className=" px-4  text-lg text-black py-3">Acton</th>
                                         </tr>
                                    </thead>
                                    <tbody>
                                         {
                                              users?.map((item, index) =>
-                                                  <tr key={item._id}>
-                                                       <th>{index + 1}</th>
-                                                       <td>{item.name}</td>
-                                                       <td>{item.email}</td>
+                                                  <tr className="text-black  font-normal text-base" key={item._id}>
+                                                       <th className="text-black first-letter:font-normal text-base">{index + 1}</th>
+                                                       <td className="text-black font-normal text-base">{item.name}</td>
+                                                       <td className="text-black font-normal text-base">{item.email}</td>
 
-                                                       <td>
+                                                       <td className="text-black font-normal text-base">
                                                             {
                                                                  item.role == "admin" ? <p className=" text-xl font-medium ">Admin</p> : item.role == "instructor" ? <p className=" text-xl font-medium ">Instructor</p> :
                                                                       <> <button onClick={() => handleAdmin(item._id)} className=" bg-[#D59578] text-white p-2 rounded mx-1">Make Admin</button>
@@ -102,7 +102,7 @@ const ManageUsers = () => {
 
                                                             }
                                                        </td>
-                                                       <td>
+                                                       <td  className="text-black font-normal text-base">
                                                             <button onClick={() => handleDelete(item._id)} className=" bg-[#ea1919] text-white p-2 rounded"><FaTrashAlt></FaTrashAlt></button>
                                                        </td>
                                                   </tr>
